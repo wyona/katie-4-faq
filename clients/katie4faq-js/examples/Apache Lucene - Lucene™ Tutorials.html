@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html><head>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with
+    this work for additional information regarding copyright ownership.
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    (the "License"); you may not use this file except in compliance with
+    the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE- 2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
+    <script type="text/javascript" src="Apache%20Lucene%20-%20Lucene%E2%84%A2%20Tutorials-Dateien/katie-api.js"></script>
+    <script type="text/javascript">
+      var domainId = "b5b25f00-a42a-4100-ae81-24caa6c19f85%2F";
+      var faqLanguage = "en";
+    </script>
+
+
+<link href="Apache%20Lucene%20-%20Lucene%E2%84%A2%20Tutorials-Dateien/katie-style.css" rel="stylesheet" type="text/css">
+<link href="Apache%20Lucene%20-%20Lucene%E2%84%A2%20Tutorials-Dateien/global.css" rel="stylesheet" type="text/css">
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Distribution" content="Global">
+<meta name="Robots" content="index,follow">
+
+<script type="text/javascript" async="" src="Apache%20Lucene%20-%20Lucene%E2%84%A2%20Tutorials-Dateien/ga.js"></script><script type="text/javascript" src="Apache%20Lucene%20-%20Lucene%E2%84%A2%20Tutorials-Dateien/prototype.js"></script>
+<script type="text/javascript" src="Apache%20Lucene%20-%20Lucene%E2%84%A2%20Tutorials-Dateien/effects.js"></script>
+<script type="text/javascript" src="Apache%20Lucene%20-%20Lucene%E2%84%A2%20Tutorials-Dateien/slides.js"></script>
+<script src="Apache%20Lucene%20-%20Lucene%E2%84%A2%20Tutorials-Dateien/snippet.js"></script>    <title>Apache Lucene - Lucene™ Tutorials</title>
+<meta name="keywords" content="apache, apache lucene, apache solr, solr, lucene
+       search, information retrieval, spell checking, faceting, inverted index,
+       open source">    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lucene.apache.org/core/quickstart.html">
+    <meta property="og:title" content="Lucene™ Tutorials">
+    <meta property="og:description" content="A copy of the demo for each version of Lucene is included in the documentation for that release.">
+    <meta property="og:image" content="https://lucene.apache.org/theme/images/lucene/lucene_og_image.png?v=0e493d7a">
+    <meta property="og:image:secure_url" content="https://lucene.apache.org/theme/images/lucene/lucene_og_image.png?v=0e493d7a">
+<link rel="shortcut icon" type="image/png" href="https://lucene.apache.org/theme/images/lucene/lucene-favicon.png?v=0e493d7a"><link href="Apache%20Lucene%20-%20Lucene%E2%84%A2%20Tutorials-Dateien/core.css" rel="stylesheet" type="text/css">
+  </head>
+  <body id="home" onload="katie_getFAQ(domainId, faqLanguage)">
+    <div id="wrap">
+      <div id="header">
+        <div id="logo" style="float:left">
+          <a href="https://lucene.apache.org/">
+            <img src="Apache%20Lucene%20-%20Lucene%E2%84%A2%20Tutorials-Dateien/lucene_logo_green_300.png" alt="Lucene Logo" border="0">
+          </a>
+        </div>
+<!-- TODO: Search disabled as it does not work, 2021-02-21
+<div id="search" style="float:right;zoom:1">
+  <form id="quick-search" method="GET" action="https://sematext.com/opensee/lucene" name="searchform">
+    <fieldset>
+      <input type="search" id="q" name="q" placeholder="Search with Apache Solr..." class="class1 class2 hint" accesskey="q">
+    </fieldset>
+  </form>
+</div>-->
+        <div id="nav">
+          <ul>
+<li><a href="https://lucene.apache.org/core/index.html">Core</a></li>
+<li><a href="https://lucene.apache.org/core/corenews.html">News</a></li>
+<li><a href="https://lucene.apache.org/core/downloads.html">Download</a></li>
+<li><a href="https://lucene.apache.org/core/discussion.html">Mailing Lists</a></li>
+<li><a href="https://lucene.apache.org/core/documentation.html">Documentation</a></li>
+<li><a href="https://lucene.apache.org/core/quickstart.html">Tutorials</a></li>
+<li><a href="https://issues.apache.org/jira/browse/LUCENE">Issue Tracker</a></li>
+<li><a class="last" href="https://lucene.apache.org/">Lucene TLP</a></li>
+          </ul>
+        </div>
+
+<div id="slides">
+  <div class="slideshow" id="mantleSlides">
+<div id="slide1" style="opacity: 0.588174;">
+  <div class="callout">
+    Ultra-fast Search Library<br>
+  </div>
+  <div class="descwrapper">
+    <div class="description">
+      Apache Lucene sets the standard for search and indexing performance
+    </div>
+  </div>
+  <div class="mantle">
+    <img alt="Apache Lucene" src="Apache%20Lucene%20-%20Lucene%E2%84%A2%20Tutorials-Dateien/mantle-lucene.png">
+  </div>
+</div>
+<div id="slide2" style="display:none">
+  <div class="callout">
+    Proven search capabilities<br>
+  </div>
+  <div class="descwrapper">
+    <div class="description">
+      Lucene is the de facto standard for search libraries
+    </div>
+  </div>
+  <div class="mantle">
+    <img alt="Lucene Power" src="Apache%20Lucene%20-%20Lucene%E2%84%A2%20Tutorials-Dateien/mantle-power.png">
+  </div>
+</div>
+<div id="slide3" style="display:none">
+  <div class="callout">
+    Innovation and Maturity
+  </div>
+  <div class="descwrapper">
+    <div class="description">
+      Lucene has proven stability as well as a track record of innovation
+    </div>
+  </div>
+  <div class="mantle">
+    <img alt="Apache Lucene" src="Apache%20Lucene%20-%20Lucene%E2%84%A2%20Tutorials-Dateien/mantle-innovation.png">
+  </div>
+</div>
+<div id="slide4" style="opacity: 0.411826;">
+  <div class="callout">
+    Apache 2.0 licensed
+  </div>
+  <div class="descwrapper">
+    <div class="description">
+      Apache Lucene is distributed under a commercially friendly Apache Software license
+    </div>
+  </div>
+  <div class="mantle">
+    <img alt="Apache Software Foundation" src="Apache%20Lucene%20-%20Lucene%E2%84%A2%20Tutorials-Dateien/mantle-asf.png">
+  </div>
+</div>  </div>
+  <div class="controls">
+    <a class="next" id="next" title="Next" href="#">Next</a>
+    <a class="previous" id="previous" title="Previous" href="#">Previous</a>
+    <a class="start" id="start" title="Start" href="#" style="display: none;">Start</a>
+    <a class="stop" id="stop" title="Stop" href="#">Stop</a>
+  </div>
+
+  <script type="text/javascript">
+    function StartSlides() {
+      new Slides('mantleSlides');
+    }
+document.observe('dom:loaded', StartSlides);
+  </script>
+</div> <!-- End #slides -->
+      </div> <!-- End #header -->
+
+      <div id="content-wrap" class="clearfix">
+        <div id="main">
+<div>
+  <div>
+
+  <div style="background-color: #ffe6b3; margin: 20px;padding: 20px;"><strong>IMPORTANT NOTE:</strong> This is a copy of the Apache Lucene website in order to demonstrate the easy integration of <a href="https://ukatie.com/katie4faq.html">Katie 4 FAQ</a>. The original Apache Lucene website is at <a href="https://lucene.apache.org">https://lucene.apache.org</a> and the original Lucene FAQ are at <a href="https://cwiki.apache.org/confluence/display/lucene/LuceneFAQ">https://cwiki.apache.org/confluence/display/lucene/LuceneFAQ</a>.</div>
+
+  <h1 class="title">Lucene™ FAQ</h1>
+
+  <div id="katie_ask">
+    <input type="text" size="50" placeholder="Ask a question ..." id="katie_question" name="katie_question" value=""/>
+    <button onclick="katie_askQuestion(katie_question.value, domainId);" id="katie_ask-button">Ask</button>
+    <script> <!-- Trigger button click on Enter -->
+    var input = document.getElementById("katie_question");
+    input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+       event.preventDefault();
+       document.getElementById("katie_ask-button").click();
+      }
+    });
+    </script>
+
+    <div id="katie_answer"></div>
+  </div>
+
+    <hr/>
+
+    <!-- INFO: Call function katie_getFAQ() -->
+    <!--<input type="button" onclick="katie_getFAQ(domainId, faqLanguage);" name="get-faq" value="Reload FAQ"/>-->
+    <div id="katie_faq"></div>
+</div>
+</div>
+        </div>
+        <div id="sidebar">
+<div class="button-wrapper">
+  <div class="button-green">
+    <a href="https://lucene.apache.org/core/downloads.html">Download</a>
+    <div class="flap top">Click to</div>
+    <div class="flap bottom">Apache Lucene 8.8.1</div>
+  </div>
+  <div class="download-desc">Apache Lucene 8.8.1</div>
+</div>
+
+<h1 id="resources">Resources</h1>
+<ul>
+  <li><a href="https://lucene.apache.org/core/discussion.html">Mailing Lists</a></li>
+  <li><a href="https://lucene.apache.org/core/developer.html">Developer</a></li>
+  <li><a href="https://lucene.apache.org/core/features.html">Features</a></li>
+  <li><a href="https://lucene.apache.org/core/downloads.html">Releases</a></li>
+  <li><a href="https://lucene.apache.org/core/systemreqs.html">System Requirements</a></li>
+</ul>
+
+<h1 id="release-docs">Release Docs</h1>
+<ul>
+  <li><a href="https://lucene.apache.org/core/8_8_1/index.html">8.8.1</a></li>
+</ul>
+
+<h1 id="about">About</h1>
+<ul>
+  <li><a href="https://www.apache.org/licenses/">License</a></li>
+  <li><a href="https://lucene.apache.org/whoweare.html">Who We are</a></li>
+</ul>
+
+<h1 id="events">Events</h1>
+<ul>
+  <a class="acevent" data-format="square" data-mode="light" data-width="160" data-style="border: 1px solid lightgrey" href="https://www.apachecon.com/acah2021/"><img title="ApacheCon @Home 2021: A celebration of Apache projects, people, and community!" alt="ApacheCon @Home 2021: A celebration of Apache projects, people, and community!" src="Apache%20Lucene%20-%20Lucene%E2%84%A2%20Tutorials-Dateien/acah2021-square-light.png" style="border: 1px solid lightgrey; max-width: 160px;"></a>
+</ul>
+
+<h1 id="asf-links">ASF links</h1>
+<ul>
+  <li><a href="https://www.apache.org/">Apache Software Foundation</a></li>
+  <li><a href="https://www.apache.org/foundation/thanks.html">Thanks</a></li>
+  <li><a href="https://www.apache.org/foundation/sponsorship.html">Become a Sponsor</a></li>
+  <li><a href="https://www.apache.org/security/">Security</a></li>
+</ul>
+
+<h1 id="related-projects">Related Projects</h1>
+<ul>
+  <li><a href="https://solr.apache.org/">Apache Solr</a></li>
+  <li><a href="http://hadoop.apache.org/">Apache Hadoop</a></li>
+  <li><a href="http://manifoldcf.apache.org/">Apache ManifoldCF</a></li>
+  <li><a href="http://lucenenet.apache.org/">Apache Lucene.Net</a></li>
+  <li><a href="http://mahout.apache.org/">Apache Mahout</a></li>
+  <li><a href="http://nutch.apache.org/">Apache Nutch</a></li>
+  <li><a href="http://opennlp.apache.org/">Apache OpenNLP</a></li>
+  <li><a href="http://tika.apache.org/">Apache Tika</a></li>
+  <li><a href="http://zookeeper.apache.org/">Apache Zookeeper</a></li>
+</ul>
+
+<div class="status">
+  <!-- No SVN anymore; TODO: how to do Git? INFRA does not have a plugin!
+    <div id="svn"></div>
+  -->
+</div>        </div>
+      </div> <!-- End #content-wrap -->
+
+<div id="footer">
+  <div class="copyright">
+    <p>
+      Copyright © 2011-2021 The Apache Software Foundation, Licensed under
+      the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.  <a href="https://lucene.apache.org/privacy.html">Privacy Policy</a>      <br>
+      Apache and the Apache feather logo are trademarks of The Apache Software Foundation.  Apache Lucene, Apache Solr and their
+      respective logos are trademarks of the Apache Software Foundation.  Please see the <a href="https://www.apache.org/foundation/marks/">Apache Trademark Policy</a>
+      for more information.
+    </p>
+  </div>
+</div>    </div> <!-- End #wrap -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-94576-12']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>  
+</body></html>
