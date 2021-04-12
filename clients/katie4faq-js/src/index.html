@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title>My FAQ</title>
+
+    <!-- INFO: Add the scripts below to your HTML, whereas make sure to configure domainId and faqLanguage accordingly -->
+    <script type="text/javascript" src="katie-api.js"></script>
+    <script type="text/javascript">
+      //var domainId = "b5b25f00-a42a-4100-ae81-24caa6c19f85%2F";
+      //var faqLanguage = "en";
+      //var domainId = "2460637f-3d61-4e56-bb88-6c9848a50ad2";
+      var domainId = "ROOT";
+      var faqLanguage = "en";
+    </script>
+
+    <link rel="stylesheet" href="katie-style.css"/>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body onload="katie_getFAQ(domainId, faqLanguage)">
+    <h1>My Frequently Asked Questions<h1>
+
+    <!-- INFO: Call function katie_askQuestion() -->
+    <div id="katie_ask">
+      <input type="text" size="50" placeholder="Ask a question ..." id="katie_question" name="katie_question" value=""/>
+
+      <button onclick="katie_askQuestion(katie_question.value, domainId);" id="katie_ask-button">Ask</button>
+
+      <script> <!-- Trigger button click on Enter -->
+      var input = document.getElementById("katie_question");
+      input.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+         event.preventDefault();
+         document.getElementById("katie_ask-button").click();
+        }
+      });
+      </script>
+
+      <div id="katie_answer"></div>
+    </div>
+
+    <hr/>
+
+    <!-- INFO: Call function katie_getFAQ() -->
+    <!--<input type="button" onclick="katie_getFAQ(domainId, faqLanguage);" name="get-faq" value="Reload FAQ"/>-->
+    <div id="katie_faq"></div>
+
+    <hr/>
+
+    &#169; <a href="https://wyona.com">Wyona</a> - <a href="https://ukatie.com">Katie</a>
+  </body>
+</html>

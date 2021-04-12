@@ -1,0 +1,57 @@
+/* Katie specific style */
+
+#katie_ask {
+  margin-top: 20px;
+}
+
+#katie_answer {
+  font-size: 0.8em;
+  font-weight: normal;
+  margin-top: 20px;
+  /*background-color: pink;*/
+}
+
+#katie_faq {
+  font-size: 0.8em;
+  font-weight: normal;
+  /*background-color: pink;*/
+}
+
+.katie_topic h2 {
+  /*background-color: pink;*/
+}
+
+.katie_qna {
+  /*background-color: yellow;*/
+  margin-bottom: 20px;
+}
+
+.katie_question {
+  /*background-color: yellow;*/
+  margin-bottom: 10px;
+}
+
+.katie_question_text {
+  /*background-color: yellow;*/
+  margin-right: 20px;
+}
+
+.katie_chevron_down {
+  background-image: url("chevron-down.svg");
+  background-repeat: no-repeat;
+  /*background-color: pink;*/
+}
+
+.katie_chevron_up {
+  background-image: url("chevron-up.svg");
+  background-repeat: no-repeat;
+  /*background-color: yellow;*/
+}
+
+.katie_answer_collapsed {
+  display: none;
+}
+
+.katie_answer_expanded {
+  /*background-color: lightblue;*/
+}
