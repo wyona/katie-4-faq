@@ -55,3 +55,20 @@
 .katie_answer_expanded {
   /*background-color: lightblue;*/
 }
+
+.katie-text-button {
+  font-size: 1em;
+  font-weight: normal;
+  font-family: Arial, sans-serif;
+  color: blue;
+  background:none;
+  border:none;
+  margin:0;
+  padding:0;
+  cursor: pointer;
+  transition: opacity .5s;
+}
+
+.katie-text-button:hover {
+  opacity: .6;
+}

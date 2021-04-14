@@ -33,12 +33,19 @@ async function fetchAnswer(question, domainId) {
       if (answer.answer != null) {
         document.getElementById("katie_answer").innerHTML = answer.answer;
       } else {
-        document.getElementById("katie_answer").innerHTML = "No answer available.";
+        document.getElementById("katie_answer").innerHTML = "No answer available. <button class='katie-text-button' onclick='sendQuestionToExpert()'>Send question to expert ...</button>";
       }
     });
   } catch(e) {
     console.info(e);
   }
+}
+
+/**
+ *
+ */
+function sendQuestionToExpert() {
+  alert("DEBUG: Send question to expert ...");
 }
 
 /**
