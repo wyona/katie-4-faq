@@ -81,7 +81,7 @@
 }
 
 #katie_send_to_expert {
-  background-color: white;
+  background-color: pink;
 /*
   padding: 6.4rem;
   border-radius: 2.4rem;
@@ -91,6 +91,11 @@
 */
 }
 
+#katie_send_to_expert h2 {
+  font-size: 2em;
+}
+
+/*
 .katie_overlay {
   position: absolute;
   border-radius: 0;
@@ -103,11 +108,14 @@
   height: 100%;
   background-color: rgb(0, 0, 0, 0.4);
 }
+*/
 
+/*
 .katie_overlay input {
   max-width: 35rem;
   width: 100%;
 }
+*/
 
 .katie_close-overlay {
   display: none;
