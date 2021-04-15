@@ -75,6 +75,8 @@
 
 #katie_answer_not_helpful {
   /*background-color: pink;*/
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 #katie_send_to_expert {
