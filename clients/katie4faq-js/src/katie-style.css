@@ -72,3 +72,42 @@
 .katie-text-button:hover {
   opacity: .6;
 }
+
+#katie_send_to_expert {
+  background-color: white;
+/*
+  padding: 6.4rem;
+  border-radius: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  max-width: 44.5rem;
+*/
+}
+
+.katie_overlay {
+  position: absolute;
+  border-radius: 0;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0, 0.4);
+}
+
+.katie_overlay input {
+  max-width: 35rem;
+  width: 100%;
+}
+
+.katie_close-overlay {
+  display: none;
+  opacity: 0;
+}
+
+.katie_open-overlay {
+  display: flex;
+  opacity: 1;
+}

@@ -33,7 +33,7 @@ async function fetchAnswer(question, domainId) {
       if (answer.answer != null) {
         document.getElementById("katie_answer").innerHTML = answer.answer;
       } else {
-        document.getElementById("katie_answer").innerHTML = "No answer available. <button class='katie-text-button' onclick='sendQuestionToExpert()'>Send question to expert ...</button>";
+        document.getElementById("katie_answer").innerHTML = "No answer available. <button class='katie-text-button' onclick='katie_toggleSendQuestionToExpert()'>Send question to expert ...</button>";
       }
     });
   } catch(e) {
@@ -44,8 +44,18 @@ async function fetchAnswer(question, domainId) {
 /**
  *
  */
-function sendQuestionToExpert() {
-  alert("DEBUG: Send question to expert ...");
+function katie_toggleSendQuestionToExpert() {
+  //alert("DEBUG: Toggle overlay to send question to expert ...");
+  document.getElementById("katie_send_to_expert").classList.toggle('katie_open-overlay');
+}
+
+/**
+ *
+ */
+function katie_sendQuestionToExpert() {
+  var question = document.getElementById("katie_question").value;
+  var email = document.getElementById("katie_user_email").value;
+  alert("DEBUG: Send question '" + question + "' and email address of user '" + email + "' to expert ...");
 }
 
 /**
