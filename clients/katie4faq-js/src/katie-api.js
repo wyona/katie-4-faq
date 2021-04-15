@@ -66,7 +66,7 @@ function katie_sendQuestionToExpert() {
       let answer = json;
       console.info(answer);
       if (answer.email != null) {
-        document.getElementById("katie_answer").innerHTML = "Thanks for resubmitting your question! We will try to answer your question '" + question + "' as soon as possible and will send you an email to '" + email + "'.";
+        document.getElementById("katie_answer").innerHTML = "Thanks for resubmitting your question! We will try to answer your question <strong>'" + question + "'</strong> as soon as possible and will send you an email to <strong>'" + email + "'</strong>.";
       } else {
         document.getElementById("katie_answer").innerHTML = "TODO: Something went wrong!";
       }
