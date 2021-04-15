@@ -31,7 +31,7 @@ async function fetchAnswer(question, domainId) {
       let answer = json;
       console.info(answer);
       if (answer.answer != null) {
-        document.getElementById("katie_answer").innerHTML = answer.answer;
+        document.getElementById("katie_answer").innerHTML = answer.answer + "<div id='katie_answer_not_helpful'>Answer not helpful? <button class='katie-text-button' onclick='katie_toggleSendQuestionToExpert()'>Send question to expert ...</button></div>";
       } else {
         document.getElementById("katie_answer").innerHTML = "No answer available. <button class='katie-text-button' onclick='katie_toggleSendQuestionToExpert()'>Send question to expert ...</button>";
       }

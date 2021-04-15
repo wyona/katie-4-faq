@@ -73,6 +73,10 @@
   opacity: .6;
 }
 
+#katie_answer_not_helpful {
+  /*background-color: pink;*/
+}
+
 #katie_send_to_expert {
   background-color: white;
 /*
