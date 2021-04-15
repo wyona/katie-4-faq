@@ -53,9 +53,27 @@ function katie_toggleSendQuestionToExpert() {
  *
  */
 function katie_sendQuestionToExpert() {
+  document.getElementById("katie_send_to_expert").classList.toggle('katie_open-overlay');
+
   var question = document.getElementById("katie_question").value;
   var email = document.getElementById("katie_user_email").value;
-  alert("DEBUG: Send question '" + question + "' and email address of user '" + email + "' to expert ...");
+  //alert("DEBUG: Send question '" + question + "' and email address of user '" + email + "' to expert ...");
+
+  try {
+    fetch(apiBaseURL + "/v1/ask?domainId=" + domainId + "&email=" + email + "&question=" + question).then(function(response) {
+      return response.json();
+    }).then(function(json) {
+      let answer = json;
+      console.info(answer);
+      if (answer.email != null) {
+        document.getElementById("katie_answer").innerHTML = "Thanks for resubmitting your question! We will try to answer your question '" + question + "' as soon as possible and will send you an email to '" + email + "'.";
+      } else {
+        document.getElementById("katie_answer").innerHTML = "TODO: Something went wrong!";
+      }
+    });
+  } catch(e) {
+    console.info(e);
+  }
 }
 
 /**
