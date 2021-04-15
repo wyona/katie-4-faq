@@ -31,9 +31,44 @@ async function fetchAnswer(question, domainId) {
       let answer = json;
       console.info(answer);
       if (answer.answer != null) {
-        document.getElementById("katie_answer").innerHTML = answer.answer;
+        document.getElementById("katie_answer").innerHTML = answer.answer + "<div id='katie_answer_not_helpful'>Answer not helpful? <button class='katie-text-button' onclick='katie_toggleSendQuestionToExpert()'>Send question to expert ...</button></div>";
       } else {
-        document.getElementById("katie_answer").innerHTML = "No answer available.";
+        document.getElementById("katie_answer").innerHTML = "No answer available. <button class='katie-text-button' onclick='katie_toggleSendQuestionToExpert()'>Send question to expert ...</button>";
+      }
+    });
+  } catch(e) {
+    console.info(e);
+  }
+}
+
+/**
+ *
+ */
+function katie_toggleSendQuestionToExpert() {
+  //alert("DEBUG: Toggle overlay to send question to expert ...");
+  document.getElementById("katie_send_to_expert").classList.toggle('katie_open-overlay');
+}
+
+/**
+ *
+ */
+function katie_sendQuestionToExpert() {
+  document.getElementById("katie_send_to_expert").classList.toggle('katie_open-overlay');
+
+  var question = document.getElementById("katie_question").value;
+  var email = document.getElementById("katie_user_email").value;
+  //alert("DEBUG: Send question '" + question + "' and email address of user '" + email + "' to expert ...");
+
+  try {
+    fetch(apiBaseURL + "/v1/ask?domainId=" + domainId + "&email=" + email + "&question=" + question).then(function(response) {
+      return response.json();
+    }).then(function(json) {
+      let answer = json;
+      console.info(answer);
+      if (answer.email != null) {
+        document.getElementById("katie_answer").innerHTML = "Thanks for resubmitting your question! We will try to answer your question <strong>'" + question + "'</strong> as soon as possible and will send you an email to <strong>'" + email + "'</strong>.";
+      } else {
+        document.getElementById("katie_answer").innerHTML = "TODO: Something went wrong!";
       }
     });
   } catch(e) {

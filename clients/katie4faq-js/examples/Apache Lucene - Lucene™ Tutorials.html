@@ -168,6 +168,15 @@ document.observe('dom:loaded', StartSlides);
     </script>
 
     <div id="katie_answer"></div>
+
+    <div id="katie_send_to_expert" class="katie_close-overlay katie_overlay">
+      <div id="katie_overlay_content">
+        <h2>Answer not helpful?</h2>
+        <p>Please enter your email and we will send you a better answer as soon as possible.</p>
+        <div><input id="katie_user_email" type="text" placeholder="Your email ..."/></div>
+        <div><button onclick="katie_send_to_expert.classList.toggle('katie_open-overlay')">Cancel</button>&#160;<button onclick="katie_sendQuestionToExpert()">Submit</button></div>
+      </div>
+    </div>
   </div>
 
     <hr/>
