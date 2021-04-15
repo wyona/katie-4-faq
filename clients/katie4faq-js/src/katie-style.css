@@ -81,41 +81,46 @@
 }
 
 #katie_send_to_expert {
-  background-color: pink;
-/*
-  padding: 6.4rem;
-  border-radius: 2.4rem;
-  display: flex;
-  flex-direction: column;
-  max-width: 44.5rem;
-*/
 }
 
-#katie_send_to_expert h2 {
-  font-size: 2em;
-}
-
-/*
+/* The Modal (background) */
 .katie_overlay {
-  position: absolute;
-  border-radius: 0;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-  top: 0;
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(0, 0, 0, 0.4);
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
-*/
 
-/*
-.katie_overlay input {
+#katie_overlay_content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+#katie_overlay_content h2 {
+  /*background-color: pink;*/
+  font-size: 1.2em;
+}
+
+#katie_overlay_content p {
+  /*background-color: yellow;*/
+  font-size: 0.8em;
+}
+
+#katie_overlay_content input {
+  /*background-color: green;*/
   max-width: 35rem;
   width: 100%;
 }
-*/
 
 .katie_close-overlay {
   display: none;
