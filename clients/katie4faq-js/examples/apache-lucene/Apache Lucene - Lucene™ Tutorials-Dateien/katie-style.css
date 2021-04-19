@@ -12,6 +12,12 @@
   /*background-color: pink;*/
 }
 
+#katie_answer li {
+  /*background-color: pink;*/
+  margin-left: 30px;
+  list-style-type: circle;
+}
+
 #katie_faq {
   font-size: 1.2em;
   font-weight: normal;
