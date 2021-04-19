@@ -57,6 +57,11 @@
   /*background-color: lightblue;*/
 }
 
+.katie_answer_expanded li {
+  /*background-color: lightblue;*/
+  list-style-type: circle;
+}
+
 .katie-text-button {
   font-size: 1em;
   font-weight: normal;
