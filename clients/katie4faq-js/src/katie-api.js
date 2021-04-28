@@ -78,6 +78,8 @@ function katie_sendQuestionToExpert() {
 
 /**
  * Get FAQ from Katie and add to DOM
+ * @param domainId Id of your domain at Katie, e.g. "c9af3861-68nc-4872-z374-4bm12f3d4df7"
+ * @param language Language of FAQs, e.g. "en" or "de"
  */
 function katie_getFAQ(domainId, language) {
    //alert("DEBUG: Get FAQ for domain Id '" + domainId + "' and language '" + language + "' ...");
