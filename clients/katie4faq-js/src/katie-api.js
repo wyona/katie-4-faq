@@ -98,7 +98,7 @@ async function fetchFAQ(domainId, language) {
       //console.info(typeof topics); // INFO: json is already an object and does not need to be parsed
       console.info(topics);
 
-      for (topic of topics) {
+      for (var topic of topics) {
         //console.info("Topic: " + topic.title);
 
         var newTopic = document.createElement("div");
@@ -109,7 +109,7 @@ async function fetchFAQ(domainId, language) {
         newTopicTitle.innerHTML = topic.title;
         newTopic.appendChild(newTopicTitle);
 
-        for (qna of topic.questions) {
+        for (var qna of topic.questions) {
           //console.info("QnA: " + qna.question);
 
           var newQnA = document.createElement("div");
