@@ -54,7 +54,11 @@
 }
 
 .katie_answer_expanded {
-  /*background-color: lightblue;*/
+  background-color: #f6f7fa;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .katie_answer_expanded li {
