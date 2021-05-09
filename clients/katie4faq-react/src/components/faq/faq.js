@@ -63,7 +63,7 @@ async fetchAnswer() {
     if (question != null && question.length > 0) {
       console.info("Get answer to question '" + question + "' ...");
     } else {
-      alert("Bitte geben Sie eine Frage ein.");
+      alert("Please enter a question.");
       return;
     }
     var url = this.apiBaseURL + "/v1/ask?domainId=" + this.domainId + "&question=" + question;
@@ -170,7 +170,7 @@ katie_toggleSendQuestionToExpert() {
 katie_sendQuestionToExpert() {
   document.getElementById("katie_send_to_expert").classList.toggle('katie_open-overlay');
 
-  var question = document.getElementById("katie_question").value;
+  var question = this.state.query;
   var email = document.getElementById("katie_user_email").value;
   if (question != null && question.length > 0 && email != null && email.length > 0) {
     console.info("Send question '" + question + "' and email address of user '" + email + "' to expert ...");
@@ -193,9 +193,9 @@ katie_sendQuestionToExpert() {
           document.getElementById("katie_answer_not_helpful").classList.toggle("katie_answer_not_helpful--close");
         }
 
-        document.getElementById("katie_answer").innerHTML = "<p>Vielen Dank für die Eingabe Ihrer Frage! Wir werden Ihre Frage <strong>'" + question + "'</strong> sobald als möglich beantworten und eine Email an <strong>'" + email + "'</strong> senden.<p></p>";
+        document.getElementById("katie_answer").innerHTML = "<p>Thank you for submitting your question! We will answer your question <strong>'" + question + "'</strong> as soon as possible and send an email to <strong>'" + email + "'</strong>.<p></p>";
       } else {
-        document.getElementById("katie_answer").innerHTML = "Es ist ein Fehler passiert, aber wir arbeiten daran!";
+        document.getElementById("katie_answer").innerHTML = "There was a mistake, but we are working on it!";
       }
     });
   } catch(e) {
@@ -221,7 +221,7 @@ render() {
                         <div className={"mt--layout--04"} id={"katie_ask"}>
                             <label className={"gn uppercase minion"}>Please enter your question</label>
                             <div className={`${styles["search_field"]} mt--spacing--03`}>
-                                <input type="text" name="katie_question" id="katie_question" onChange={this.handleChange} onKeyDown={this.keyPress}/>
+                                <input type="text" onChange={this.handleChange} onKeyDown={this.keyPress}/>
                                 <button className={`${styles["search-button"]} bg-light-black`} onClick={() => this.fetchAnswer()}>
                                     <img src="/search_white_24dp.svg" alt="Search icon"/>
                                 </button>
