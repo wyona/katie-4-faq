@@ -223,7 +223,7 @@ render() {
                             <div className={`${styles["search_field"]} mt--spacing--03`}>
                                 <input type="text" name="katie_question" id="katie_question" onChange={this.handleChange} onKeyDown={this.keyPress}/>
                                 <button className={`${styles["search-button"]} bg-light-black`} onClick={() => this.fetchAnswer()}>
-                                    <img src="/icons/search_white_24dp.svg" alt="Search icon"/>
+                                    <img src="/search_white_24dp.svg" alt="Search icon"/>
                                 </button>
                             </div>
                         </div>

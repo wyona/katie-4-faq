@@ -24,12 +24,11 @@ code {
     display: none;
 }
 
-/*
 .katie_chevron_down {
     user-select: none;
     margin-left: 20px;
     vertical-align: middle;
-    background-image: url("../public/chevron-down.svg");
+    background-image: url("chevron-down.svg");
     background-repeat: no-repeat;
 }
 
@@ -37,10 +36,9 @@ code {
     user-select: none;
     margin-left: 20px;
     vertical-align: middle;
-    background-image: url("../public/chevron-up.svg");
+    background-image: url("chevron-up.svg");
     background-repeat: no-repeat;
 }
-*/
 
 /* The Modal (background) */
 .katie_overlay {
