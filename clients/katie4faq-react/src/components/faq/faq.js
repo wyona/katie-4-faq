@@ -216,7 +216,7 @@ render() {
                 <section className={`${styles["article-body"]} grid`}>
                     <h1 className="gn mt--layout--02 black uppercase tac">Questions & Answers</h1>
                     <div className="article-content first-letter-capital" >
-                        <p>Hier finden Sie Antworten zu den häufigsten Fragen. Sollten Sie keine passende Antwort finden beraten wir Sie gerne.</p>
+                        <p>Here you will find answers to the most frequently asked questions.</p><p>If you do not find a suitable answer, please send us your question and we will answer it as best as we can.</p>
 
                         <div className={"mt--layout--04"} id={"katie_ask"}>
                             <label className={"gn uppercase minion"}>Please enter your question</label>
@@ -231,13 +231,13 @@ render() {
                         <div id="katie_answer" className={`katie_answer`}></div>
 
                         <div id="katie_answer_not_helpful" className="katie_answer_not_helpful--close mt--layout--02">
-                          <p className={"inline-block mr--spacing--06"}>Antwort nicht hilfreich?</p>
-                          <button className="inline-block katie-text-button button button--dark gn uppercase minion hover--opacity" onClick={() => this.katie_toggleSendQuestionToExpert()}>Frage einsenden</button>
+                          <p className={"inline-block mr--spacing--06"}>Answer not helpful?</p>
+                          <button className="inline-block katie-text-button button button--dark gn uppercase minion hover--opacity" onClick={() => this.katie_toggleSendQuestionToExpert()}>Submit question</button>
                         </div>
 
                         <div id="katie_no_answer_available" className="katie_no_answer_available--close">
-                          <p className={"inline-block mr--spacing--06"}>Keine Antwort verfügbar.</p>
-                          <button className="inline-block katie-text-button button button--dark gn uppercase minion hover--opacity" onClick={() => this.katie_toggleSendQuestionToExpert()}>Frage einsenden</button>
+                          <p className={"inline-block mr--spacing--06"}>No answer available.</p>
+                          <button className="inline-block katie-text-button button button--dark gn uppercase minion hover--opacity" onClick={() => this.katie_toggleSendQuestionToExpert()}>Submit question</button>
                         </div>
 
                         <div id="katie_send_to_expert" className="katie_close-overlay katie_overlay">
@@ -246,7 +246,7 @@ render() {
                                 <p className={"mt--layout--02"}>Bitte geben Sie Ihre Email ein und wir schicken Ihnen eine passende Antwort.</p>
                                 <div className={"mt--layout--02"}>
                                     <label className={"gn uppercase minion flex flex-direction--column"}>Ihre Email</label>
-                                    <input className={"mt--spacing--02"} id="katie_user_email" type="text" placeholder="E-Mail"/>
+                                    <input className={"mt--spacing--02"} id="katie_user_email" type="text" placeholder="ted.lasso@wyona.com"/>
                                 </div>
                                 <p className={"mt--spacing--04 minion"}>Der Schutz Ihrer Daten ist uns wichtig und wir verwenden die von Ihnen eingegebene Email einzig für die Zusendung der Antwort.</p>
                                 <div className={"mt--layout--04"}>
