@@ -8,10 +8,10 @@ export default class Faq extends React.Component {
 
 apiBaseURL = "https://ukatie.com/api";
 
-domainId = "c9af3861-68cc-4872-b966-4bd19f3d4df7";
-language = "de";
-//domainId = "ROOT";
-//language = "en";
+//domainId = "c9af3861-68cc-4872-b966-4bd19f3d4df7";
+//language = "de";
+domainId = "ROOT";
+language = "en";
 
 /**
  *
@@ -246,7 +246,7 @@ render() {
                                 <p className={"mt--layout--02"}>Bitte geben Sie Ihre Email ein und wir schicken Ihnen eine passende Antwort.</p>
                                 <div className={"mt--layout--02"}>
                                     <label className={"gn uppercase minion flex flex-direction--column"}>Ihre Email</label>
-                                    <input className={"mt--spacing--02"} id="katie_user_email" type="text" placeholder="wes.anderson@gmail.com"/>
+                                    <input className={"mt--spacing--02"} id="katie_user_email" type="text" placeholder="E-Mail"/>
                                 </div>
                                 <p className={"mt--spacing--04 minion"}>Der Schutz Ihrer Daten ist uns wichtig und wir verwenden die von Ihnen eingegebene Email einzig für die Zusendung der Antwort.</p>
                                 <div className={"mt--layout--04"}>
