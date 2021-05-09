@@ -242,16 +242,16 @@ render() {
 
                         <div id="katie_send_to_expert" className="katie_close-overlay katie_overlay">
                             <div id="katie_overlay_content">
-                                <h2 className={"gn black uppercase"}>Frage einsenden</h2>
-                                <p className={"mt--layout--02"}>Bitte geben Sie Ihre Email ein und wir schicken Ihnen eine passende Antwort.</p>
+                                <h2 className={"gn black uppercase"}>Submit question</h2>
+                                <p className={"mt--layout--02"}>Please enter your email and we will send you a suitable reply.</p>
                                 <div className={"mt--layout--02"}>
-                                    <label className={"gn uppercase minion flex flex-direction--column"}>Ihre Email</label>
+                                    <label className={"gn uppercase minion flex flex-direction--column"}>Your email</label>
                                     <input className={"mt--spacing--02"} id="katie_user_email" type="text" placeholder="ted.lasso@wyona.com"/>
                                 </div>
-                                <p className={"mt--spacing--04 minion"}>Der Schutz Ihrer Daten ist uns wichtig und wir verwenden die von Ihnen eingegebene Email einzig für die Zusendung der Antwort.</p>
+                                <p className={"mt--spacing--04 minion"}>The protection of your data is important to us and we use the email you entered only for sending the answer.</p>
                                 <div className={"mt--layout--04"}>
                                     <button className={`button button--outline gn uppercase minion mr--spacing--04 hover--opacity`} onClick={() => this.katie_toggleSendQuestionToExpert()}>Cancel</button>
-                                    <button className={`button button--dark gn uppercase minion hover--opacity`} onClick={() => this.katie_sendQuestionToExpert()}>Senden</button>
+                                    <button className={`button button--dark gn uppercase minion hover--opacity`} onClick={() => this.katie_sendQuestionToExpert()}>Send</button>
                                 </div>
                             </div>
                         </div>
