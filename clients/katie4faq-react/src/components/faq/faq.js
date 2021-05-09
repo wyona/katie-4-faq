@@ -214,12 +214,12 @@ render() {
             <div id="sticky-anchor"/>
             <article className={`${styles["article"]} grid__container mb--layout--05`}>
                 <section className={`${styles["article-body"]} grid`}>
-                    <h1 className="gn mt--layout--02 black uppercase tac">Fragen & Antworten</h1>
+                    <h1 className="gn mt--layout--02 black uppercase tac">Questions & Answers</h1>
                     <div className="article-content first-letter-capital" >
                         <p>Hier finden Sie Antworten zu den häufigsten Fragen. Sollten Sie keine passende Antwort finden beraten wir Sie gerne.</p>
 
                         <div className={"mt--layout--04"} id={"katie_ask"}>
-                            <label className={"gn uppercase minion"}>Frage suchen</label>
+                            <label className={"gn uppercase minion"}>Please enter your question</label>
                             <div className={`${styles["search_field"]} mt--spacing--03`}>
                                 <input type="text" name="katie_question" id="katie_question" onChange={this.handleChange} onKeyDown={this.keyPress}/>
                                 <button className={`${styles["search-button"]} bg-light-black`} onClick={() => this.fetchAnswer()}>
