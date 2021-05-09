@@ -6,6 +6,13 @@ import React from "react";
  */
 export default class Faq extends React.Component {
 
+apiBaseURL = "https://ukatie.com/api";
+
+domainId = "c9af3861-68cc-4872-b966-4bd19f3d4df7";
+language = "de";
+//domainId = "ROOT";
+//language = "en";
+
 /**
  *
  */
@@ -20,16 +27,14 @@ constructor(props) {
 
   this.handleChange = this.handleChange.bind(this);
   this.keyPress = this.keyPress.bind(this);
-
-  this.fetchFAQ();
 }
 
-apiBaseURL = "https://ukatie.com/api";
-
-domainId = "c9af3861-68cc-4872-b966-4bd19f3d4df7";
-language = "de";
-//domainId = "ROOT";
-//language = "en";
+/**
+ *
+ */
+componentWillMount() {
+  this.fetchFAQ();
+}
 
 /**
  *
