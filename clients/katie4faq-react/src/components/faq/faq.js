@@ -45,15 +45,16 @@ handleChange(event) {
 keyPress(event){
   if(event.keyCode === 13){
     this.setState({query: event.target.value});
-    this.fetchAnswer(event.target.value);
+    this.fetchAnswer();
   }
 }
 
 /**
  *
  */
-async fetchAnswer(question) {
-    console.info("Query: " + this.state.query);
+async fetchAnswer() {
+    var question = this.state.query;
+    console.info("Query: " + question);
     if (question != null && question.length > 0) {
       console.info("Get answer to question '" + question + "' ...");
     } else {
@@ -216,7 +217,7 @@ render() {
                             <label className={"gn uppercase minion"}>Frage suchen</label>
                             <div className={`${styles["search_field"]} mt--spacing--03`}>
                                 <input type="text" name="katie_question" id="katie_question" onChange={this.handleChange} onKeyDown={this.keyPress}/>
-                                <button className={`${styles["search-button"]} bg-light-black`} onClick={() => this.fetchAnswer("Was bedeutet 5.1?")}>
+                                <button className={`${styles["search-button"]} bg-light-black`} onClick={() => this.fetchAnswer()}>
                                     <img src="/icons/search_white_24dp.svg" alt="Search icon"/>
                                 </button>
                             </div>
