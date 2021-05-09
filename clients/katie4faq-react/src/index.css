@@ -11,3 +11,77 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.katie_no_answer_available--close {
+    display: none;
+}
+
+.katie_answer_not_helpful--close {
+    display: none;
+}
+
+.katie_answer_collapsed {
+    display: none;
+}
+
+/*
+.katie_chevron_down {
+    user-select: none;
+    margin-left: 20px;
+    vertical-align: middle;
+    background-image: url("../public/chevron-down.svg");
+    background-repeat: no-repeat;
+}
+
+.katie_chevron_up {
+    user-select: none;
+    margin-left: 20px;
+    vertical-align: middle;
+    background-image: url("../public/chevron-up.svg");
+    background-repeat: no-repeat;
+}
+*/
+
+/* The Modal (background) */
+.katie_overlay {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 99; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+#katie_overlay_content {
+    background-color: white;
+    margin: auto;
+    padding: 64px;
+    max-width: 50rem;
+}
+
+@media (max-width: 680px) {
+    .katie_overlay {
+        background-color: white;
+    }
+
+    #katie_overlay_content {
+        padding: 64px 24px;
+    }
+}
+
+#katie_overlay_content input {
+      width: 100%;
+}
+
+.katie_close-overlay {
+      display: none;
+      opacity: 0;
+}
+
+.katie_open-overlay {
+      display: flex;
+      opacity: 1;
+}
