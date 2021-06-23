@@ -10,6 +10,7 @@
       //var domainId = "2460637f-3d61-4e56-bb88-6c9848a50ad2";
       var domainId = "ROOT";
       var faqLanguage = "en";
+      //var faqLanguage = "de";
     </script>
 
     <link rel="stylesheet" href="katie-style.css"/>
@@ -27,7 +28,7 @@
     <div id="katie_ask">
       <input type="text" size="50" placeholder="Ask a question ..." id="katie_question" name="katie_question" value=""/>
 
-      <button onclick="katie_askQuestion(katie_question.value, domainId);" id="katie_ask-button">Ask</button>
+      <button onclick="katie_askQuestion(katie_question.value, domainId, faqLanguage);" id="katie_ask-button">Ask</button>
 
       <script> <!-- Trigger button click on Enter -->
       var input = document.getElementById("katie_question");

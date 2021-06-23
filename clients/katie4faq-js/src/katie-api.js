@@ -10,14 +10,19 @@ var apiBaseURL = "https://ukatie.com/api";
  * Get answer from Katie and add to DOM
  * @param question Question asked by user
  * @param domainId Domain Id of Katie containing knowledge base
+ * @param faqLanguage Language of FAQ, e.g. "en" or "de"
  */
-function katie_askQuestion(question, domainId) {
-   //alert("DEBUG: Submit question to Katie: " + question);
-   if (question != null && question.length > 0) {
-     fetchAnswer(question, domainId);
-   } else {
-        document.getElementById("katie_answer").innerHTML = "Please enter a question.";
-   }
+function katie_askQuestion(question, domainId, faqLanguage) {
+  //alert("DEBUG: Submit question to Katie: " + question);
+  if (question != null && question.length > 0) {
+    fetchAnswer(question, domainId);
+  } else {
+    if (faqLanguage == "de") {
+      document.getElementById("katie_answer").innerHTML = "Bitte geben Sie eine Frage ein.";
+    } else {
+      document.getElementById("katie_answer").innerHTML = "Please enter a question.";
+    }
+  }
 }
 
 /**
