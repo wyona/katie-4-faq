@@ -2,6 +2,9 @@
 
 var germanTranslation = {
   my_faq: "Meine häufig gestellten Fragen",
+  ask: "Fragen",
+  cancel: "Abbrechen",
+  submit: "Absenden",
   modal: {
     answer_not_helpful: "Antwort nicht hilfreich?",
     please_enter_email: "Bitte geben Sie Ihre E-Mail-Adresse ein, und wir werden Ihnen so schnell wie möglich eine bessere Antwort zukommen lassen."
@@ -10,6 +13,9 @@ var germanTranslation = {
 
 var englishTranslation = {
   my_faq: "My Frequently Asked Questions",
+  ask: "Ask",
+  cancel: "Cancel",
+  submit: "Submit",
   modal: {
     answer_not_helpful: "Answer not helpful?",
     please_enter_email: "Please enter your email and we will send you a better answer as soon as possible."
@@ -35,7 +41,7 @@ function katie_translate(language) {
  * Replace text
  */
 function katie_replace(element, language) {
-  console.info("Replace ...");
+  console.info("Replace text of element using language '" + language + "' ...");
 
   var keys = element.dataset.i18n.split(".");
 
