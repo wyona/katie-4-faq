@@ -3,6 +3,7 @@
     <title>My FAQ</title>
 
     <!-- INFO: Add the scripts below to your HTML, whereas make sure to configure domainId and faqLanguage accordingly -->
+    <script type="text/javascript" src="translator.js"></script>
     <script type="text/javascript" src="katie-api.js"></script>
     <script type="text/javascript">
       //var domainId = "b5b25f00-a42a-4100-ae81-24caa6c19f85%2F";
@@ -21,8 +22,8 @@
       }
     </style>
   </head>
-  <body onload="katie_getFAQ(domainId, faqLanguage)">
-    <h1>My Frequently Asked Questions</h1>
+  <body onload="katie_translate(faqLanguage);katie_getFAQ(domainId, faqLanguage)">
+    <h1 data-i18n="my_faq">My Frequently Asked Questions</h1>
 
     <!-- INFO: Call function katie_askQuestion() -->
     <div id="katie_ask">
@@ -44,8 +45,8 @@
 
       <div id="katie_send_to_expert" class="katie_close-overlay katie_overlay">
         <div id="katie_overlay_content">
-          <h2>Answer not helpful?</h2>
-          <p>Please enter your email and we will send you a better answer as soon as possible.</p>
+          <h2 data-i18n="modal.answer_not_helpful">Answer not helpful?</h2>
+          <p data-i18n="modal.please_enter_email">Please enter your email and we will send you a better answer as soon as possible.</p>
           <div><input id="katie_user_email" type="text" placeholder="Your email ..."/></div>
           <div><button onclick="katie_send_to_expert.classList.toggle('katie_open-overlay')">Cancel</button>&#160;<button onclick="katie_sendQuestionToExpert()">Submit</button></div>
         </div>
