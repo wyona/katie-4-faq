@@ -29,7 +29,7 @@
     <div id="katie_ask">
       <input type="text" size="50" placeholder="Ask a question ..." id="katie_question" name="katie_question" value=""/>
 
-      <button onclick="katie_askQuestion(katie_question.value, domainId, faqLanguage);" id="katie_ask-button">Ask</button>
+      <button onclick="katie_askQuestion(katie_question.value, domainId, faqLanguage);" id="katie_ask-button" data-i18n="ask">Ask</button>
 
       <script> <!-- Trigger button click on Enter -->
       var input = document.getElementById("katie_question");
@@ -48,7 +48,7 @@
           <h2 data-i18n="modal.answer_not_helpful">Answer not helpful?</h2>
           <p data-i18n="modal.please_enter_email">Please enter your email and we will send you a better answer as soon as possible.</p>
           <div><input id="katie_user_email" type="text" placeholder="Your email ..."/></div>
-          <div><button onclick="katie_send_to_expert.classList.toggle('katie_open-overlay')">Cancel</button>&#160;<button onclick="katie_sendQuestionToExpert()">Submit</button></div>
+          <div><button onclick="katie_send_to_expert.classList.toggle('katie_open-overlay')" data-i18n="cancel">Cancel</button>&#160;<button onclick="katie_sendQuestionToExpert()" data-i18n="submit">Submit</button></div>
         </div>
       </div>
     </div>
