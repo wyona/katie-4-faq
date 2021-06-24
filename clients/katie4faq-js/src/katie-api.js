@@ -42,7 +42,11 @@ async function fetchAnswer(question, domainId, language) {
           document.getElementById("katie_answer").innerHTML = answer.answer + "<div id='katie_answer_not_helpful'>Answer not helpful? <button class='katie-text-button' onclick='katie_toggleSendQuestionToExpert()'>Send question to expert ...</button></div>";
       }
       } else {
-        document.getElementById("katie_answer").innerHTML = "No answer available. <button class='katie-text-button' onclick='katie_toggleSendQuestionToExpert()'>Send question to expert ...</button>";
+        if (language == "de") {
+          document.getElementById("katie_answer").innerHTML = "Keine Antwort verfügbar. <button class='katie-text-button' onclick='katie_toggleSendQuestionToExpert()'>Frage an einen Experten schicken ...</button>";
+        } else {
+          document.getElementById("katie_answer").innerHTML = "No answer available. <button class='katie-text-button' onclick='katie_toggleSendQuestionToExpert()'>Send question to expert ...</button>";
+        }
       }
     });
   } catch(e) {
