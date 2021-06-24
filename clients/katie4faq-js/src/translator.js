@@ -88,9 +88,19 @@ function katie_replace(element, language) {
  * @param language Language, e.g. "de" or "en"
  */
 function katie_getTextFromTranslationJSON(key, language) {
+  console.info("Get value for language '" + language + "' and key '" + key + "' ...");
+
+  // TODO: In the case of the Lucene example only the "flat" JSON implementation works
+
+  //deTranslations = {"my_faq":"Meine häufig gestellten Fragen","ask":"Fragen","cancel":"Abbrechen","submit":"Absenden","input_question.placeholder_label":"Eine Frage stellen ...","input_email.placeholder_label":"Ihre E-Mail ...","modal.answer_not_helpful":"Antwort nicht hilfreich?","modal.please_enter_email":"Bitte geben Sie Ihre E-Mail-Adresse ein, und wir werden Ihnen so schnell wie möglich eine bessere Antwort zukommen lassen."};
+
+  //enTranslations = {"my_faq":"My Frequently Asked Questions","ask":"Ask","cancel":"Cancel","submit":"Submit","input_question.placeholder_label":"Ask a question ...","input_email.placeholder_label":"Your email ...","modal.answer_not_helpful":"Answer not helpful?","modal.please_enter_email":"Please enter your email and we will send you a better answer as soon as possible."};
+
   if (language == "de") {
+    //return deTranslations[key];
     return key.split('.').reduce((obj, i) => (obj ? obj[i] : null), germanTranslation);
   } else {
+    //return enTranslations[key];
     return key.split('.').reduce((obj, i) => (obj ? obj[i] : null), englishTranslation);
   }
 }
