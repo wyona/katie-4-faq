@@ -5,7 +5,7 @@ var germanTranslation = {
   ask: "Fragen",
   cancel: "Abbrechen",
   submit: "Absenden",
-  input: {
+  input_question: {
     placeholder_label: "Eine Frage stellen ..."
   },
   input_email: {
@@ -22,7 +22,7 @@ var englishTranslation = {
   ask: "Ask",
   cancel: "Cancel",
   submit: "Submit",
-  input: {
+  input_question: {
     placeholder_label: "Ask a question ..."
   },
   input_email: {
