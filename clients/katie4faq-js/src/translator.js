@@ -44,33 +44,47 @@ function katie_translate(language) {
 }
 
 /**
- * Replace text
+ * Replace text, e.g. <h1 data-i18n="my_faq">My Frequently Asked Questions</h1> or <input data-i18n="input.placeholder_label input.title_label" data-i18n-attr="placeholder title" placeholder="Ask a question ..." title="Question"/>
+ * @param language Language, e.g. "de" or "en"
  */
 function katie_replace(element, language) {
   console.info("Replace text of element using language '" + language + "' ...");
 
-  var keys = element.dataset.i18n.split(".");
+  var keys = element.getAttribute('data-i18n')?.split(/\s/g);
 
   const attributes = element?.getAttribute('data-i18n-attr')?.split(/\s/g);
   if (attributes) {
-    const keysAttr = element.getAttribute('data-i18n')?.split(/\s/g);
-    if (attributes && keysAttr.length != attributes.length) {
-      alert("ERROR: Mismatching attributes! " + attributes.length + ", " + keysAttr.length);
-    } else {
-      //alert("DEBUG: " + attributes + ", " + keysAttr);
+    if (attributes && keys.length != attributes.length) {
+      alert("ERROR: Mismatching nummber of i18n attributes and keys! " + attributes.length + ", " + keys.length);
     }
   }
 
-  var text = null;
-  if (language == "de") {
-    text = keys.reduce((obj, i) => obj[i], germanTranslation);
-  } else {
-    text = keys.reduce((obj, i) => obj[i], englishTranslation);
-  }
+  keys.forEach((key, index) => {
+    const text = katie_getTextFromTranslationJSON(key, language);
+    //alert("DEBUG: Translation text: " + katie_getTextFromTranslationJSON(key, language));
+    const attr = attributes ? attributes[index] : 'innerHTML';
 
-  if (text) {
-    element.innerHTML = text;
+    if (text) {
+      //element.innerHTML = text;
+      if (attr == 'innerHTML') {
+        element[attr] = text;
+      } else {
+        element.setAttribute(attr, text);
+      }
+    } else {
+      alert("No translation text available!");
+    }
+  });
+}
+
+/**
+ * Get translation text for a particular key and language
+ * @param language Language, e.g. "de" or "en"
+ */
+function katie_getTextFromTranslationJSON(key, language) {
+  if (language == "de") {
+    return key.split('.').reduce((obj, i) => (obj ? obj[i] : null), germanTranslation);
   } else {
-    alert("No text available!");
+    return key.split('.').reduce((obj, i) => (obj ? obj[i] : null), englishTranslation);
   }
 }
