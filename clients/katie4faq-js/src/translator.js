@@ -5,6 +5,9 @@ var germanTranslation = {
   ask: "Fragen",
   cancel: "Abbrechen",
   submit: "Absenden",
+  input: {
+    placeholder_label: "Eine Frage stellen ..."
+  },
   modal: {
     answer_not_helpful: "Antwort nicht hilfreich?",
     please_enter_email: "Bitte geben Sie Ihre E-Mail-Adresse ein, und wir werden Ihnen so schnell wie möglich eine bessere Antwort zukommen lassen."
@@ -16,6 +19,9 @@ var englishTranslation = {
   ask: "Ask",
   cancel: "Cancel",
   submit: "Submit",
+  input: {
+    placeholder_label: "Ask a question ..."
+  },
   modal: {
     answer_not_helpful: "Answer not helpful?",
     please_enter_email: "Please enter your email and we will send you a better answer as soon as possible."
@@ -45,6 +51,16 @@ function katie_replace(element, language) {
 
   var keys = element.dataset.i18n.split(".");
 
+  const attributes = element?.getAttribute('data-i18n-attr')?.split(/\s/g);
+  if (attributes) {
+    const keysAttr = element.getAttribute('data-i18n')?.split(/\s/g);
+    if (attributes && keysAttr.length != attributes.length) {
+      alert("ERROR: Mismatching attributes! " + attributes.length + ", " + keysAttr.length);
+    } else {
+      //alert("DEBUG: " + attributes + ", " + keysAttr);
+    }
+  }
+
   var text = null;
   if (language == "de") {
     text = keys.reduce((obj, i) => obj[i], germanTranslation);
@@ -54,5 +70,7 @@ function katie_replace(element, language) {
 
   if (text) {
     element.innerHTML = text;
+  } else {
+    alert("No text available!");
   }
 }
