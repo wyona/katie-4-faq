@@ -8,6 +8,9 @@ var germanTranslation = {
   input: {
     placeholder_label: "Eine Frage stellen ..."
   },
+  input_email: {
+    placeholder_label: "Ihre E-Mail ..."
+  },
   modal: {
     answer_not_helpful: "Antwort nicht hilfreich?",
     please_enter_email: "Bitte geben Sie Ihre E-Mail-Adresse ein, und wir werden Ihnen so schnell wie möglich eine bessere Antwort zukommen lassen."
@@ -21,6 +24,9 @@ var englishTranslation = {
   submit: "Submit",
   input: {
     placeholder_label: "Ask a question ..."
+  },
+  input_email: {
+    placeholder_label: "Your email ..."
   },
   modal: {
     answer_not_helpful: "Answer not helpful?",
