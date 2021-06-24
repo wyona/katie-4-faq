@@ -17,10 +17,13 @@
     limitations under the License.
 -->
 
+    <script type="text/javascript" src="Apache%20Lucene%20-%20Lucene%E2%84%A2%20Tutorials-Dateien/translator.js"></script>
     <script type="text/javascript" src="Apache%20Lucene%20-%20Lucene%E2%84%A2%20Tutorials-Dateien/katie-api.js"></script>
     <script type="text/javascript">
       var domainId = "9f206aec-5223-4e03-a2fc-c16e4b885ef8";
       var faqLanguage = "en";
+      //var domainId = "ROOT";
+      //var faqLanguage = "de";
     </script>
 
 
@@ -46,7 +49,7 @@
     <meta property="og:image:secure_url" content="https://lucene.apache.org/theme/images/lucene/lucene_og_image.png?v=0e493d7a">
 <link rel="shortcut icon" type="image/png" href="https://lucene.apache.org/theme/images/lucene/lucene-favicon.png?v=0e493d7a"><link href="Apache%20Lucene%20-%20Lucene%E2%84%A2%20Tutorials-Dateien/core.css" rel="stylesheet" type="text/css">
   </head>
-  <body id="home" onload="katie_getFAQ(domainId, faqLanguage)">
+  <body id="home" onload="katie_translate(faqLanguage);katie_getFAQ(domainId, faqLanguage)">
     <div id="wrap">
       <div id="header">
         <div id="logo" style="float:left">
@@ -155,8 +158,8 @@ document.observe('dom:loaded', StartSlides);
   <h1 class="title">Lucene™ FAQ</h1>
 
   <div id="katie_ask">
-    <input type="text" size="50" placeholder="Ask a question ..." id="katie_question" name="katie_question" value=""/>
-    <button onclick="katie_askQuestion(katie_question.value, domainId);" id="katie_ask-button">Ask</button>
+    <input type="text" size="50" data-i18n="input_question.placeholder_label" data-i18n-attr="placeholder" placeholder="Ask a question ..." id="katie_question" name="katie_question" value=""/>
+    <button onclick="katie_askQuestion(katie_question.value, domainId, faqLanguage);" id="katie_ask-button" data-i18n="ask">Ask</button>
     <script> <!-- Trigger button click on Enter -->
     var input = document.getElementById("katie_question");
     input.addEventListener("keyup", function(event) {
@@ -171,10 +174,10 @@ document.observe('dom:loaded', StartSlides);
 
     <div id="katie_send_to_expert" class="katie_close-overlay katie_overlay">
       <div id="katie_overlay_content">
-        <h2>Answer not helpful?</h2>
-        <p>Please enter your email and we will send you a better answer as soon as possible.</p>
-        <div><input id="katie_user_email" type="text" placeholder="Your email ..."/></div>
-        <div><button onclick="katie_send_to_expert.classList.toggle('katie_open-overlay')">Cancel</button>&#160;<button onclick="katie_sendQuestionToExpert()">Submit</button></div>
+        <h2 data-i18n="modal.answer_not_helpful">Answer not helpful?</h2>
+        <p data-i18n="modal.please_enter_email">Please enter your email and we will send you a better answer as soon as possible.</p>
+        <div><input id="katie_user_email" type="text" data-i18n="input_email.placeholder_label" data-i18n-attr="placeholder" placeholder="Your email ..."/></div>
+        <div><button onclick="katie_send_to_expert.classList.toggle('katie_open-overlay')" data-i18n="cancel">Cancel</button>&#160;<button onclick="katie_sendQuestionToExpert(faqLanguage)" data-i18n="submit">Submit</button></div>
       </div>
     </div>
   </div>
