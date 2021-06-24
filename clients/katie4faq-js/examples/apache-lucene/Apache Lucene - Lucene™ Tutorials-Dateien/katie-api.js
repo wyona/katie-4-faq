@@ -10,20 +10,25 @@ var apiBaseURL = "https://ukatie.com/api";
  * Get answer from Katie and add to DOM
  * @param question Question asked by user
  * @param domainId Domain Id of Katie containing knowledge base
+ * @param faqLanguage Language of FAQ, e.g. "en" or "de"
  */
-function katie_askQuestion(question, domainId) {
-   //alert("DEBUG: Submit question to Katie: " + question);
-   if (question != null && question.length > 0) {
-     fetchAnswer(question, domainId);
-   } else {
-        document.getElementById("katie_answer").innerHTML = "Please enter a question.";
-   }
+function katie_askQuestion(question, domainId, faqLanguage) {
+  //alert("DEBUG: Submit question to Katie: " + question);
+  if (question != null && question.length > 0) {
+    fetchAnswer(question, domainId, faqLanguage);
+  } else {
+    if (faqLanguage == "de") {
+      document.getElementById("katie_answer").innerHTML = "Bitte geben Sie eine Frage ein.";
+    } else {
+      document.getElementById("katie_answer").innerHTML = "Please enter a question.";
+    }
+  }
 }
 
 /**
  * Get answer from Katie and add to DOM
  */
-async function fetchAnswer(question, domainId) {
+async function fetchAnswer(question, domainId, language) {
   try {
     fetch(apiBaseURL + "/v1/ask?domainId=" + domainId + "&question=" + question).then(function(response) {
       return response.json();
@@ -31,9 +36,17 @@ async function fetchAnswer(question, domainId) {
       let answer = json;
       console.info(answer);
       if (answer.answer != null) {
-        document.getElementById("katie_answer").innerHTML = answer.answer + "<div id='katie_answer_not_helpful'>Answer not helpful? <button class='katie-text-button' onclick='katie_toggleSendQuestionToExpert()'>Send question to expert ...</button></div>";
+        if (language == "de") {
+          document.getElementById("katie_answer").innerHTML = answer.answer + "<div id='katie_answer_not_helpful'>Antwort nicht hilfreich? <button class='katie-text-button' onclick='katie_toggleSendQuestionToExpert()'>Frage an einen Experten schicken ...</button></div>";
+        } else {
+          document.getElementById("katie_answer").innerHTML = answer.answer + "<div id='katie_answer_not_helpful'>Answer not helpful? <button class='katie-text-button' onclick='katie_toggleSendQuestionToExpert()'>Send question to expert ...</button></div>";
+      }
       } else {
-        document.getElementById("katie_answer").innerHTML = "No answer available. <button class='katie-text-button' onclick='katie_toggleSendQuestionToExpert()'>Send question to expert ...</button>";
+        if (language == "de") {
+          document.getElementById("katie_answer").innerHTML = "Keine Antwort verfügbar. <button class='katie-text-button' onclick='katie_toggleSendQuestionToExpert()'>Frage an einen Experten schicken ...</button>";
+        } else {
+          document.getElementById("katie_answer").innerHTML = "No answer available. <button class='katie-text-button' onclick='katie_toggleSendQuestionToExpert()'>Send question to expert ...</button>";
+        }
       }
     });
   } catch(e) {
@@ -52,7 +65,7 @@ function katie_toggleSendQuestionToExpert() {
 /**
  *
  */
-function katie_sendQuestionToExpert() {
+function katie_sendQuestionToExpert(language) {
   document.getElementById("katie_send_to_expert").classList.toggle('katie_open-overlay');
 
   var question = document.getElementById("katie_question").value;
@@ -66,7 +79,11 @@ function katie_sendQuestionToExpert() {
       let answer = json;
       console.info(answer);
       if (answer.email != null) {
-        document.getElementById("katie_answer").innerHTML = "Thanks for resubmitting your question! We will try to answer your question <strong>'" + question + "'</strong> as soon as possible and will send you an email to <strong>'" + email + "'</strong>.";
+        if (language == "de") {
+          document.getElementById("katie_answer").innerHTML = "Vielen Dank, dass Sie Ihre Frage eingereicht haben! Wir probieren Ihre Frage <strong>'" + question + "'</strong> so schnell wie möglich zu beantworten und werden Ihnen eine E-Mail schicken an <strong>'" + email + "'</strong>.";
+        } else {
+          document.getElementById("katie_answer").innerHTML = "Thanks for resubmitting your question! We will try to answer your question <strong>'" + question + "'</strong> as soon as possible and will send you an email to <strong>'" + email + "'</strong>.";
+        }
       } else {
         document.getElementById("katie_answer").innerHTML = "TODO: Something went wrong!";
       }
@@ -78,6 +95,8 @@ function katie_sendQuestionToExpert() {
 
 /**
  * Get FAQ from Katie and add to DOM
+ * @param domainId Id of your domain at Katie, e.g. "c9af3861-68nc-4872-z374-4bm12f3d4df7"
+ * @param language Language of FAQs, e.g. "en" or "de"
  */
 function katie_getFAQ(domainId, language) {
    //alert("DEBUG: Get FAQ for domain Id '" + domainId + "' and language '" + language + "' ...");
@@ -96,7 +115,7 @@ async function fetchFAQ(domainId, language) {
       //console.info(typeof topics); // INFO: json is already an object and does not need to be parsed
       console.info(topics);
 
-      for (topic of topics) {
+      for (var topic of topics) {
         //console.info("Topic: " + topic.title);
 
         var newTopic = document.createElement("div");
@@ -107,7 +126,7 @@ async function fetchFAQ(domainId, language) {
         newTopicTitle.innerHTML = topic.title;
         newTopic.appendChild(newTopicTitle);
 
-        for (qna of topic.questions) {
+        for (var qna of topic.questions) {
           //console.info("QnA: " + qna.question);
 
           var newQnA = document.createElement("div");
