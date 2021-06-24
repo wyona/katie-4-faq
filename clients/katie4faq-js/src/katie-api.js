@@ -65,7 +65,7 @@ function katie_toggleSendQuestionToExpert() {
 /**
  *
  */
-function katie_sendQuestionToExpert() {
+function katie_sendQuestionToExpert(language) {
   document.getElementById("katie_send_to_expert").classList.toggle('katie_open-overlay');
 
   var question = document.getElementById("katie_question").value;
@@ -79,7 +79,11 @@ function katie_sendQuestionToExpert() {
       let answer = json;
       console.info(answer);
       if (answer.email != null) {
-        document.getElementById("katie_answer").innerHTML = "Thanks for resubmitting your question! We will try to answer your question <strong>'" + question + "'</strong> as soon as possible and will send you an email to <strong>'" + email + "'</strong>.";
+        if (language == "de") {
+          document.getElementById("katie_answer").innerHTML = "Vielen Dank, dass Sie Ihre Frage eingereicht haben! Wir probieren Ihre Frage <strong>'" + question + "'</strong> so schnell wie möglich zu beantworten und werden Ihnen eine E-Mail schicken an <strong>'" + email + "'</strong>.";
+        } else {
+          document.getElementById("katie_answer").innerHTML = "Thanks for resubmitting your question! We will try to answer your question <strong>'" + question + "'</strong> as soon as possible and will send you an email to <strong>'" + email + "'</strong>.";
+        }
       } else {
         document.getElementById("katie_answer").innerHTML = "TODO: Something went wrong!";
       }
