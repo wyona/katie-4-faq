@@ -15,7 +15,7 @@ var apiBaseURL = "https://ukatie.com/api";
 function katie_askQuestion(question, domainId, faqLanguage) {
   //alert("DEBUG: Submit question to Katie: " + question);
   if (question != null && question.length > 0) {
-    fetchAnswer(question, domainId);
+    fetchAnswer(question, domainId, faqLanguage);
   } else {
     if (faqLanguage == "de") {
       document.getElementById("katie_answer").innerHTML = "Bitte geben Sie eine Frage ein.";
@@ -28,7 +28,7 @@ function katie_askQuestion(question, domainId, faqLanguage) {
 /**
  * Get answer from Katie and add to DOM
  */
-async function fetchAnswer(question, domainId) {
+async function fetchAnswer(question, domainId, language) {
   try {
     fetch(apiBaseURL + "/v1/ask?domainId=" + domainId + "&question=" + question).then(function(response) {
       return response.json();
@@ -36,7 +36,11 @@ async function fetchAnswer(question, domainId) {
       let answer = json;
       console.info(answer);
       if (answer.answer != null) {
-        document.getElementById("katie_answer").innerHTML = answer.answer + "<div id='katie_answer_not_helpful'>Answer not helpful? <button class='katie-text-button' onclick='katie_toggleSendQuestionToExpert()'>Send question to expert ...</button></div>";
+        if (language == "de") {
+          document.getElementById("katie_answer").innerHTML = answer.answer + "<div id='katie_answer_not_helpful'>Antwort nicht hilfreich? <button class='katie-text-button' onclick='katie_toggleSendQuestionToExpert()'>Frage an einen Experten schicken ...</button></div>";
+        } else {
+          document.getElementById("katie_answer").innerHTML = answer.answer + "<div id='katie_answer_not_helpful'>Answer not helpful? <button class='katie-text-button' onclick='katie_toggleSendQuestionToExpert()'>Send question to expert ...</button></div>";
+      }
       } else {
         document.getElementById("katie_answer").innerHTML = "No answer available. <button class='katie-text-button' onclick='katie_toggleSendQuestionToExpert()'>Send question to expert ...</button>";
       }
