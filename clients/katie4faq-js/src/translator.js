@@ -46,6 +46,8 @@ function katie_translate(language) {
   if (elements.length && elements.length > 0) {
     console.info(elements.length + " elements found to be translated");
     elements.forEach((element) => katie_replace(element, language));
+  } else {
+    console.info("No elements found with attribute 'data-i18n'.");
   }
 }
 
@@ -56,9 +58,14 @@ function katie_translate(language) {
 function katie_replace(element, language) {
   console.info("Replace text of element using language '" + language + "' ...");
 
-  var keys = element.getAttribute('data-i18n')?.split(/\s/g);
+  var keys = element.getAttribute('data-i18n').split(/\s/g);
 
-  const attributes = element?.getAttribute('data-i18n-attr')?.split(/\s/g);
+  const dataI18nAttr = element.getAttribute('data-i18n-attr');
+  var attributes = null;
+  if (dataI18nAttr) {
+    attributes = dataI18nAttr.split(/\s/g);
+  }
+
   if (attributes) {
     if (attributes && keys.length != attributes.length) {
       alert("ERROR: Mismatching nummber of i18n attributes and keys! " + attributes.length + ", " + keys.length);
