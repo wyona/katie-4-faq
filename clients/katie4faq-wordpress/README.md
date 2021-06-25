@@ -1,0 +1,15 @@
+# Wordpress Plugin to integrate your FAQ into your Wordpress website using the Katie API
+
+If you already have setup a domain/FAQ at Katie (https://ukatie.com) and you have Wordpress website, then do the following steps
+
+1. Create a zip file of the Plugin by running inside this folder
+```zip -r katie_4_faq.zip .```
+2. Upload the Plugin to your Wordpress website and activate the Plugin
+3. Configure the Plugin by clicking on the newly generated menu item "Katie Setting" and set the field domainId
+4. Create a page and set the shortcode
+```[katie_faq language=en]```:
+5. Publish the page
+
+You should then see your FAQ and be able to search your FAQ using natural language :-)
+
+See for example https://rockondigital.ch/frequently-asked-questions/
