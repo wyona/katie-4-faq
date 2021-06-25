@@ -1,5 +1,7 @@
 # Wordpress Plugin to integrate your FAQ into your Wordpress website using the Katie API
 
+## Installation
+
 If you already have setup a domain/FAQ at Katie (https://ukatie.com) and you have a Wordpress website, then do the following steps
 
 1. Create a zip file of the Plugin by running inside this folder
@@ -13,3 +15,13 @@ If you already have setup a domain/FAQ at Katie (https://ukatie.com) and you hav
 You should then see your FAQ and be able to search your FAQ using natural language :-)
 
 See for example https://rockondigital.ch/frequently-asked-questions/
+
+## Implementation Details
+
+The Katie API calls are done by JavaScript (based on the pure JavaScript client https://github.com/wyona/katie-4-faq/tree/main/clients/katie4faq-js)
+
+- cn_package/katie4faq/katie-api.js
+
+The page HTML is located at
+
+- public/partials/katie_4_faq-public-display.php
