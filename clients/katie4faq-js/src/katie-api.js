@@ -70,6 +70,16 @@ function katie_sendQuestionToExpert(language) {
 
   var question = document.getElementById("katie_question").value;
   var email = document.getElementById("katie_user_email").value;
+
+  if (email == null || email.length == 0) {
+    if (language == "de") {
+      alert("WARNUNG: Bitte geben Sie eine gültige E-Mail Adresse ein!");
+    } else {
+      alert("WARNING: Please enter a valid email address!");
+    }
+    return;
+  }
+
   //alert("DEBUG: Send question '" + question + "' and email address of user '" + email + "' to expert ...");
 
   try {
@@ -85,7 +95,7 @@ function katie_sendQuestionToExpert(language) {
           document.getElementById("katie_answer").innerHTML = "Thanks for resubmitting your question! We will try to answer your question <strong>'" + question + "'</strong> as soon as possible and will send you an email to <strong>'" + email + "'</strong>.";
         }
       } else {
-        document.getElementById("katie_answer").innerHTML = "TODO: Something went wrong!";
+        document.getElementById("katie_answer").innerHTML = "WARNING: Something went wrong while sending question to expert!";
       }
     });
   } catch(e) {
