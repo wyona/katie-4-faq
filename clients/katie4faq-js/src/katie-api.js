@@ -16,11 +16,14 @@ var apiBaseURL = "https://ukatie.com/api";
  */
 function katie_setPrivacyPolicy(required, language, urlDE, textDE, urlEN, textEN) {
   if (required) {
-    alert("DEBUG: Set privacy policy for language '" + language + "' ...");
+    //alert("DEBUG: Set privacy policy for language '" + language + "' ...");
+    console.info("Set privacy policy for language '" + language + "' ...");
     if (language == "de") {
       document.getElementById("privacy_policy_link_text").innerHTML = textDE;
+      document.getElementById("privacy_policy_link_text").setAttribute("href", urlDE);
     } else {
       document.getElementById("privacy_policy_link_text").innerHTML = textEN;
+      document.getElementById("privacy_policy_link_text").setAttribute("href", urlEN);
     }
     document.getElementById("privacy_policy").classList.toggle('katie_show-privacy-policy');
   } else {
