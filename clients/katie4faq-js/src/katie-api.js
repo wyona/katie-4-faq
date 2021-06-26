@@ -25,7 +25,7 @@ function katie_setPrivacyPolicy(required, language, urlDE, textDE, urlEN, textEN
       document.getElementById("privacy_policy_link_text").innerHTML = textEN;
       document.getElementById("privacy_policy_link_text").setAttribute("href", urlEN);
     }
-    document.getElementById("privacy_policy").classList.toggle('katie_show-privacy-policy');
+    document.getElementById("katie_privacy-policy").classList.toggle('katie_show-privacy-policy');
   } else {
     //alert("DEBUG: Keep privacy policy hidden ...");
   }

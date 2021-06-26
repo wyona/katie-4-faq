@@ -141,6 +141,29 @@
   opacity: 1;
 }
 
+#send_to_expert_buttons {
+  margin-top: 20px;
+}
+
+#katie_privacy-policy {
+  /*background-color: yellow;*/
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#katie_privacy-policy input {
+  width: 20px;
+}
+
+/*
+#privacy_policy_checkbox {
+}
+*/
+
+#privacy_policy_link_text {
+  /*background-color: pink;*/
+}
+
 .katie_hide-privacy-policy {
   display: none;
   opacity: 0;
