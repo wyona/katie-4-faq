@@ -90,7 +90,7 @@ function katie_toggleSendQuestionToExpert() {
 /**
  *
  */
-function katie_sendQuestionToExpert(language) {
+function katie_sendQuestionToExpert(language, acceptPrivacyPolicyRequired) {
   document.getElementById("katie_send_to_expert").classList.toggle('katie_open-overlay');
 
   var question = document.getElementById("katie_question").value;
@@ -103,6 +103,21 @@ function katie_sendQuestionToExpert(language) {
       alert("WARNING: Please enter a valid email address!");
     }
     return;
+  }
+
+  if (acceptPrivacyPolicyRequired) {
+    var accepted = document.getElementById("privacy_policy_checkbox").checked;
+    //alert("DEBUG: Privacy policy accepted: " + accepted);
+    if (!accepted) {
+      if (language == "de") {
+        alert("WARNUNG: Bitte lesen und akzeptieren Sie die Datenschutzrichtlinie!");
+      } else {
+        alert("WARNING: Please read and accept the privacy statement!");
+      }
+      return;
+    } else {
+      console.info("User has accepted privacy policy.");
+    }
   }
 
   //alert("DEBUG: Send question '" + question + "' and email address of user '" + email + "' to expert ...");
