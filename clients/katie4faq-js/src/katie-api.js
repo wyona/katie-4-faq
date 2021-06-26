@@ -7,6 +7,22 @@ var apiBaseURL = "https://ukatie.com/api";
 //var apiBaseURL = "http://localhost:8080/api";
 
 /**
+ * @param required If true, then privacy policy needs to be accepted, otherwise checkbox re privacy policy is hidden
+ * @param language Language of FAQ
+ * @param urlDE Link to german version of privacy policy
+ * @param textDE German hint re privacy policy
+ * @param urlEN Link to english version of privacy policy
+ * @param textEN English hint re privacy policy
+ */
+function katie_setPrivacyPolicy(required, language, urlDE, textDE, urlEN, textEN) {
+  if (required) {
+    alert("DEBUG: Set privacy policy for language '" + language + "' ...");
+  } else {
+    alert("DEBUG: Hide privacy policy ...");
+  }
+}
+
+/**
  * Get answer from Katie and add to DOM
  * @param question Question asked by user
  * @param domainId Domain Id of Katie containing knowledge base
