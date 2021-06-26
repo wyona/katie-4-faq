@@ -13,8 +13,7 @@ var germanTranslation = {
   },
   modal: {
     answer_not_helpful: "Antwort nicht hilfreich?",
-    please_enter_email: "Bitte geben Sie Ihre E-Mail-Adresse ein, und wir werden Ihnen so schnell wie möglich eine bessere Antwort zukommen lassen.",
-    read_accept_terms_conditions: "Ich habe die Datenschutzrichtlinie von TODO gelesen und stimme zu"
+    please_enter_email: "Bitte geben Sie Ihre E-Mail-Adresse ein, und wir werden Ihnen so schnell wie möglich eine bessere Antwort zukommen lassen."
   }
 };
 
@@ -31,8 +30,7 @@ var englishTranslation = {
   },
   modal: {
     answer_not_helpful: "Answer not helpful?",
-    please_enter_email: "Please enter your email and we will send you a better answer as soon as possible.",
-    read_accept_terms_conditions: "I have read and accept the privacy policy of TODO"
+    please_enter_email: "Please enter your email and we will send you a better answer as soon as possible."
   }
 };
 
