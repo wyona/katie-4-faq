@@ -140,3 +140,13 @@
   display: flex;
   opacity: 1;
 }
+
+.katie_hide-privacy-policy {
+  display: none;
+  opacity: 0;
+}
+
+.katie_show-privacy-policy {
+  display: flex;
+  opacity: 1;
+}
