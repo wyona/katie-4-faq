@@ -79,7 +79,7 @@ class Katie_4_faq_Admin {
 	}
 
 	public function Katie_4_faq_plugin_menu(){
-		add_menu_page('Katie Setting', 'Katie Setting', 'manage_options', 'katie-setting',  array($this, 'cn_settings'),'dashicons-text-page',5);
+		add_menu_page('Katie Settings', 'Katie Settings', 'manage_options', 'katie-setting',  array($this, 'cn_settings'),'dashicons-text-page',5);
 		
 	}
 	public function cn_settings(){
