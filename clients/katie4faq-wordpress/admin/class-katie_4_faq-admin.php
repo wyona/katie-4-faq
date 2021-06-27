@@ -92,7 +92,7 @@ class Katie_4_faq_Admin {
 						jQuery(document).ready(function(){
 							swal({
 								type: 'success',
-								title: 'updated successfully',
+								title: 'Katie Settings updated successfully',
 								text: '',
 								showConfirmButton: false,
 								timer: 1600
