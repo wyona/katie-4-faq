@@ -7,6 +7,31 @@ var apiBaseURL = "https://ukatie.com/api";
 //var apiBaseURL = "http://localhost:8080/api";
 
 /**
+ * @param required If true, then privacy policy needs to be accepted, otherwise checkbox re privacy policy is hidden
+ * @param language Language of FAQ
+ * @param urlDE Link to german version of privacy policy
+ * @param textDE German hint re privacy policy
+ * @param urlEN Link to english version of privacy policy
+ * @param textEN English hint re privacy policy
+ */
+function katie_setPrivacyPolicy(required, language, urlDE, textDE, urlEN, textEN) {
+  if (required) {
+    //alert("DEBUG: Set privacy policy for language '" + language + "' ...");
+    console.info("Set privacy policy for language '" + language + "' ...");
+    if (language == "de") {
+      document.getElementById("privacy_policy_link_text").innerHTML = textDE;
+      document.getElementById("privacy_policy_link_text").setAttribute("href", urlDE);
+    } else {
+      document.getElementById("privacy_policy_link_text").innerHTML = textEN;
+      document.getElementById("privacy_policy_link_text").setAttribute("href", urlEN);
+    }
+    document.getElementById("katie_privacy-policy").classList.toggle('katie_show-privacy-policy');
+  } else {
+    //alert("DEBUG: Keep privacy policy hidden ...");
+  }
+}
+
+/**
  * Get answer from Katie and add to DOM
  * @param question Question asked by user
  * @param domainId Domain Id of Katie containing knowledge base
@@ -65,7 +90,7 @@ function katie_toggleSendQuestionToExpert() {
 /**
  *
  */
-function katie_sendQuestionToExpert(language) {
+function katie_sendQuestionToExpert(language, acceptPrivacyPolicyRequired) {
   document.getElementById("katie_send_to_expert").classList.toggle('katie_open-overlay');
 
   var question = document.getElementById("katie_question").value;
@@ -78,6 +103,21 @@ function katie_sendQuestionToExpert(language) {
       alert("WARNING: Please enter a valid email address!");
     }
     return;
+  }
+
+  if (acceptPrivacyPolicyRequired) {
+    var accepted = document.getElementById("privacy_policy_checkbox").checked;
+    //alert("DEBUG: Privacy policy accepted: " + accepted);
+    if (!accepted) {
+      if (language == "de") {
+        alert("WARNUNG: Bitte lesen und akzeptieren Sie die Datenschutzrichtlinie!");
+      } else {
+        alert("WARNING: Please read and accept the privacy statement!");
+      }
+      return;
+    } else {
+      console.info("User has accepted privacy policy.");
+    }
   }
 
   //alert("DEBUG: Send question '" + question + "' and email address of user '" + email + "' to expert ...");

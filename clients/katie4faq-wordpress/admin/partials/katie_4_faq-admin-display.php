@@ -21,15 +21,55 @@ wp_enqueue_media();
       <div class="cn_col-md-12">
         <div class="cn_card">
              <div class="cn_card-header" style="font-size: 15px;">
-              <strong>Setting</strong>  
+              <strong>Katie Settings</strong>
             </div>
           <div class="cn_card-body">
               <form class="form-horizontal" action="" method="post">
                 <div class="cn-form-group">
                   <div class="row">
                     <div class="cn_col-md-6">
-                      <label class="control-label" for="">domainId:</label>
-                      <input type="text" name="cn_form[domainId]"  class="cn-form-control" value="<?php echo $cn_form['domainId'] ?>">
+                      <label class="control-label" for="">Katie domain Id:</label>
+                      <input type="text" name="cn_form[domainId]" class="cn-form-control" value="<?php echo $cn_form['domainId'] ?>">
+                    </div>
+                  </div>
+                </div>
+                <div class="cn-form-group">
+                  <div class="row">
+                    <div class="cn_col-md-6">
+                      <label class="control-label" for="">acceptPrivacyPolicyRequired:</label>
+                      <input type="text" name="cn_form[acceptPrivacyPolicyRequired]" class="cn-form-control" value="<?php echo $cn_form['acceptPrivacyPolicyRequired'] ?>">
+                    </div>
+                  </div>
+                </div>
+                <div class="cn-form-group">
+                  <div class="row">
+                    <div class="cn_col-md-6">
+                      <label class="control-label" for="">Link/URL to Privacy Policy in English:</label>
+                      <input type="text" name="cn_form[ppEnURL]" class="cn-form-control" value="<?php echo $cn_form['ppEnURL'] ?>">
+                    </div>
+                  </div>
+                </div>
+                <div class="cn-form-group">
+                  <div class="row">
+                    <div class="cn_col-md-6">
+                      <label class="control-label" for="">Link text in English re Privacy Policy:</label>
+                      <input type="text" name="cn_form[ppEnText]" class="cn-form-control" value="<?php echo $cn_form['ppEnText'] ?>">
+                    </div>
+                  </div>
+                </div>
+                <div class="cn-form-group">
+                  <div class="row">
+                    <div class="cn_col-md-6">
+                      <label class="control-label" for="">Link/URL to Privacy Policy in German:</label>
+                      <input type="text" name="cn_form[ppDeURL]" class="cn-form-control" value="<?php echo $cn_form['ppDeURL'] ?>">
+                    </div>
+                  </div>
+                </div>
+                <div class="cn-form-group">
+                  <div class="row">
+                    <div class="cn_col-md-6">
+                      <label class="control-label" for="">Link text in German re Privacy Policy:</label>
+                      <input type="text" name="cn_form[ppDeText]" class="cn-form-control" value="<?php echo $cn_form['ppDeText'] ?>">
                     </div>
                   </div>
                 </div>

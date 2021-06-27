@@ -185,6 +185,39 @@ div#katie_overlay_content {
 }
 .cn_submit{
   float: right;
+}
+
+#send_to_expert_buttons {
+  margin-top: 20px;
+}
+
+#katie_privacy-policy {
+  /*background-color: yellow;*/
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#katie_privacy-policy input {
+  width: 20px;
+}
+
+/*
+#privacy_policy_checkbox {
+}
+*/
+
+#privacy_policy_link_text {
+  /*background-color: pink;*/
+}
+
+.katie_hide-privacy-policy {
+  display: none;
+  opacity: 0;
+}
+
+.katie_show-privacy-policy {
+  display: flex;
+  opacity: 1;
 }';
       }
 
@@ -224,7 +257,8 @@ div#katie_overlay_content {
           <h2 data-i18n="modal.answer_not_helpful">Answer not helpful?</h2>
           <p data-i18n="modal.please_enter_email">Please enter your email and we will send you a better answer as soon as possible.</p>
           <div class="cn-form-group"><input style="max-width: unset;" class="cn-form-control" id="katie_user_email" type="text" data-i18n="input_email.placeholder_label" data-i18n-attr="placeholder" placeholder="Your email ..."/></div>
-          <div class="cn-form-group"><button onclick="katie_send_to_expert.classList.toggle('katie_open-overlay')" class="button btn cn_cancel" data-i18n="cancel">Cancel</button>&#160;<button onclick="katie_sendQuestionToExpert(faqLanguage)" class="button btn cn_submit" data-i18n="submit">Submit</button></div>
+          <div class="katie_hide-privacy-policy" id="katie_privacy-policy"><input type="checkbox" id="privacy_policy_checkbox"/><a href="privacy_policy.html" target="_blank" id="privacy_policy_link_text">I have read and accept the Privacy Statement</a></div>
+          <div class="cn-form-group"><button onclick="katie_send_to_expert.classList.toggle('katie_open-overlay')" class="button btn cn_cancel" data-i18n="cancel">Cancel</button>&#160;<button onclick="katie_sendQuestionToExpert(faqLanguage, acceptPrivacyPolicyRequired)" class="button btn cn_submit" data-i18n="submit">Submit</button></div>
         </div>
       </div>
     </div>
@@ -240,7 +274,24 @@ div#katie_overlay_content {
       //var domainId = "2460637f-3d61-4e56-bb88-6c9848a50ad2";
       var domainId = "<?php echo $cn_form['domainId']; ?>";
       var faqLanguage = "<?php echo $language; ?>";
+
+      var acceptPrivacyPolicyRequired = true;
+      //var acceptPrivacyPolicyRequired = "<?php echo $cn_form['acceptPrivacyPolicyRequired']; ?>";
+
+      //var ppEnURL = "https://wyona.com/privacy-policy";
+      var ppEnURL = "<?php echo $cn_form['ppEnURL']; ?>";
+
+      //var ppDeURL = "https://wyona.com/datenschutzrichtlinie";
+      var ppDeURL = "<?php echo $cn_form['ppDeURL']; ?>";
+
+      //var ppEnText = "I have read and accept the WYONA Privacy Statement";
+      var ppEnText = "<?php echo $cn_form['ppEnText']; ?>";
+
+      //var ppDeText = "Ich habe die Datenschutzrichtlinie von WYONA gelesen und stimme zu";
+      var ppDeText = "<?php echo $cn_form['ppDeText']; ?>";
+
       katie_translate(faqLanguage);
+      katie_setPrivacyPolicy(acceptPrivacyPolicyRequired, faqLanguage, ppDeURL, ppDeText, ppEnURL, ppEnText);
       katie_getFAQ(domainId, faqLanguage);
     </script>
 
