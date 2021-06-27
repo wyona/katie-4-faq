@@ -6,7 +6,7 @@ If you already have setup a domain/FAQ at Katie (https://ukatie.com) and you hav
 
 1. Create a zip file of the Plugin by running ```zip -r katie_4_faq.zip .``` inside this folder
 2. Upload the Plugin to your Wordpress website and activate the Plugin
-3. Configure the Plugin by clicking on the newly generated menu item "Katie Setting" and set the field domainId
+3. Configure the Plugin by clicking on the newly generated menu item "Katie Settings" and set the field domainId
 4. Create a page and set the shortcode ```[katie_faq language=en]```
 5. Publish the page
 
