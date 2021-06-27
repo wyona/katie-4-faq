@@ -36,8 +36,8 @@ wp_enqueue_media();
                 <div class="cn-form-group">
                   <div class="row">
                     <div class="cn_col-md-6">
-                      <label class="control-label" for="">acceptPrivacyPolicyRequired:</label>
-                      <input type="text" name="cn_form[acceptPrivacyPolicyRequired]" class="cn-form-control" value="<?php echo $cn_form['acceptPrivacyPolicyRequired'] ?>">
+                      <label class="control-label" for="">Flag whether a privacy policy should be displayed and needs to be accepted:</label>
+                      <input type="checkbox" name="cn_form[acceptPrivacyPolicyRequiredFlag]" class="cn-form-control" <?php if($cn_form['acceptPrivacyPolicyRequiredFlag'] == "on") echo "checked" ?>>
                     </div>
                   </div>
                 </div>

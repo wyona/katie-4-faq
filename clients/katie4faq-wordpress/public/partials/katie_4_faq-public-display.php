@@ -269,14 +269,20 @@ div#katie_overlay_content {
     <div id="katie_faq"></div>
 
     <script type="text/javascript">
-      //var domainId = "b5b25f00-a42a-4100-ae81-24caa6c19f85%2F";
+      //var domainId = "9f206aec-5223-4e03-a2fc-c16e4b885ef8";
       //var faqLanguage = "en";
-      //var domainId = "2460637f-3d61-4e56-bb88-6c9848a50ad2";
       var domainId = "<?php echo $cn_form['domainId']; ?>";
+      //alert("DEBUG: domainId: " + domainId);
       var faqLanguage = "<?php echo $language; ?>";
 
-      var acceptPrivacyPolicyRequired = true;
-      //var acceptPrivacyPolicyRequired = "<?php echo $cn_form['acceptPrivacyPolicyRequired']; ?>";
+      var acceptPrivacyPolicyRequired = false;
+      var acceptPrivacyPolicyRequiredFlag = "<?php echo $cn_form['acceptPrivacyPolicyRequiredFlag']; ?>";
+      //alert("DEBUG: acceptPrivacyPolicyRequiredFlag: " + acceptPrivacyPolicyRequiredFlag);
+      if (acceptPrivacyPolicyRequiredFlag == "on") {
+        acceptPrivacyPolicyRequired = true;
+      } else {
+        //alert("DEBUG: acceptPrivacyPolicyRequiredFlag: off");
+      }
 
       //var ppEnURL = "https://wyona.com/privacy-policy";
       var ppEnURL = "<?php echo $cn_form['ppEnURL']; ?>";
