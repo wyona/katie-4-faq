@@ -1,0 +1,12 @@
+{
+  "/api": {
+    "target": {
+      "host":"ukatie.com",
+      "protocol":"https:",
+      "port":443
+    },
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel":"debug"
+  }
+}
