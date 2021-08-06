@@ -13,7 +13,8 @@ Documentation API V1
 ## Requirements
 
 Building the API client library requires:
-1. Java 1.7+
+1. Java 1.7+ (Successfully tested with: export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home)
+1.1 If you are using jdk11, you need to uncomment the dependency "javax.annotation" explicitly in the pom file
 2. Maven/Gradle
 
 ## Installation
