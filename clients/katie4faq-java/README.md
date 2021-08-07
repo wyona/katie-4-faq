@@ -85,16 +85,17 @@ public class AskControllerApiExample {
     public static void main(String[] args) {
         
         AskControllerApi apiInstance = new AskControllerApi();
-        String question = "question_example"; // String | Question, e.g. 'What is the highest mountain of the world?'
-        String answerLinkType = "answerLinkType_example"; // String | Answer link type. When value is set to 'deeplink' and as soon as expert will have answered question, then email or push notification to questioner will contain a deep link to answer, such that mobile app is opened and answer can be read within mobile app
-        Object authorization = null; // Object | Bearer JWT
-        String domainId = "domainId_example"; // String | Domain Id, for example 'wyona', which represents a single realm containing its own set of questions/answers. When no domain Id is set, then the ROOT domain Id will be used.
-        String email = "email_example"; // String | Email address of user asking question (e.g. 'louise@wyona.com'), such that user can be notified by email when an expert has answered the question
-        String fcmToken = "fcmToken_example"; // String | Firebase Cloud Messaging token associated with mobile device of user asking question, such that a push notification can be sent when an expert has answered the question
-        String webhookEchoContent = "webhookEchoContent_example"; // String | Content which is echoed back by webhook(s), in case webhook(s) configured for the given domain Id 
+        String question = "How to make a torch in Minecraft?";
+        String domainId = "9377029b-0521-4b6d-ba07-0f3c1ba754ff";
+        String answerLinkType = null;
+        Object authorization = null;
+        String email = null;
+        String fcmToken = null;
+        String webhookEchoContent = null;
         try {
             ResponseAnswer result = apiInstance.getAnswerUsingGET(question, answerLinkType, authorization, domainId, email, fcmToken, webhookEchoContent);
             System.out.println(result);
+            System.out.println(result.getAnswer().trim());
         } catch (ApiException e) {
             System.err.println("Exception when calling AskControllerApi#getAnswerUsingGET");
             e.printStackTrace();
