@@ -66,6 +66,14 @@ Then manually install the following JARs:
 * `target/swagger-java-client-1.0.0.jar`
 * `target/lib/*.jar`
 
+The following JARs are required during runtime:
+
+* `com/squareup/okhttp/okhttp/2.7.5/okhttp-2.7.5.jar`
+* `com/squareup/okio/okio/1.17.2/okio-1.17.2.jar`
+* `com/google/code/gson/gson/2.8.6/gson-2.8.6.jar`
+* `org//threeten/threetenbp/1.4.3/threetenbp-1.4.3.jar`
+* `io/gsonfire/gson-fire/1.8.3/gson-fire-1.8.3.jar`
+
 ## Getting Started
 
 Please follow the [installation](#installation) instruction and execute the following Java code:
