@@ -74,6 +74,12 @@ The following JARs are required during runtime:
 * `org//threeten/threetenbp/1.4.3/threetenbp-1.4.3.jar`
 * `io/gsonfire/gson-fire/1.8.3/gson-fire-1.8.3.jar`
 
+The base URL (e.g. https://ukatie.com) is configured inside
+
+`src/main/java/io/swagger/client/ApiClient.java`
+
+whereas search for basePath
+
 ## Getting Started
 
 Please follow the [installation](#installation) instruction and execute the following Java code:
