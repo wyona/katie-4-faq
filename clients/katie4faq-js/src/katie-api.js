@@ -123,7 +123,7 @@ function katie_sendQuestionToExpert(language, acceptPrivacyPolicyRequired) {
   //alert("DEBUG: Send question '" + question + "' and email address of user '" + email + "' to expert ...");
 
   try {
-    fetch(apiBaseURL + "/v1/ask?domainId=" + domainId + "&email=" + email + "&question=" + question).then(function(response) {
+    fetch(apiBaseURL + "/v1/ask?domainId=" + domainId + "&email=" + email + "&questionerLanguage=" + language + "&question=" + question).then(function(response) {
       return response.json();
     }).then(function(json) {
       let answer = json;
