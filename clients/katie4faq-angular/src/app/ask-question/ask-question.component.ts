@@ -23,7 +23,7 @@ export class AskQuestionComponent implements OnInit {
     }
 
     console.info("Submit question to Katie: " + question);
-    // TODO: Submit question to Katie and display answer below input field
+    alert("TODO: Submit question to Katie and display answer below input field");
   }
 
 }
