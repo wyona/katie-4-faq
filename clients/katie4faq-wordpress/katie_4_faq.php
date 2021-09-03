@@ -15,8 +15,8 @@
  * @wordpress-plugin
  * Plugin Name:       Katie 4 FAQ
  * Plugin URI:        https://github.com/wyona/katie-4-faq/tree/main/clients/katie4faq-wordpress
- * Description:       Integrate FAQ managed at Katie (https://ukatie.com).
- * Version:           1.1.0
+ * Description:       Manage FAQ with Katie (https://ukatie.com).
+ * Version:           1.2.0
  * Author:            Wyona <contact@wyona.com> and Shivam <ser.shivam1994@gmail.com>
  * Author URI:        https://wyona.com
  * License:           Apache License 2.0
@@ -35,7 +35,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'KATIE_4_FAQ_VERSION', '1.1.0' );
+define( 'KATIE_4_FAQ_VERSION', '1.2.0' );
 $path_array  = wp_upload_dir();
 $upload_url=$path_array['baseurl'];
 $upload_dir=$path_array['basedir'];
