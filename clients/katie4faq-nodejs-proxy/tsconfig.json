@@ -1,0 +1,22 @@
+{
+	"compilerOptions": {
+		"target": "ES6",
+		"module": "commonjs",
+		"sourceMap": true,
+		"noImplicitAny": true,
+		"removeComments": true,
+		"preserveConstEnums": true,
+		"moduleResolution": "node",
+		"declaration": true,
+		"declarationMap": true,
+    	"declarationDir": "build",
+		"outDir": "build",
+		"baseUrl": "./",
+	},
+	"include": [
+		"src/**/*.ts"
+	],
+	"exclude": [
+		"node_modules"
+	]
+}

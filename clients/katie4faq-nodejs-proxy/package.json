@@ -1,0 +1,21 @@
+{
+  "name": "@ukatie/proxy",
+  "version": "1.0.2",
+  "description": "A data privacy focused proxy for Katie",
+  "main": "./build/index.js",
+  "scripts": {
+    "build": "rimraf build && tsc",
+    "pack": "npm pack",
+    "build:release": "npm run build && npm run pack"
+  },
+  "author": "Veeting AG",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "got": "^11.8.2"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2",
+    "ts-node": "9.1.1",
+    "typescript": "^4.3.5"
+  }
+}
