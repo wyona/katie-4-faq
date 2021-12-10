@@ -101,7 +101,7 @@ export class Katie {
 		return new Promise<IKatieAnswer>(async (resolve, reject) => {
 			try {
 
-				const email = await this.expertQuestionStorage.get(answer["echo-data"]);
+				const email = await this.expertQuestionStorage.get(answer.echodata);
 
 				answer.email = email;
 
@@ -113,7 +113,7 @@ export class Katie {
 		})
 	}
 
-	private async cacheFaq(language: string, faq: IKatieFAQ) {
+	private async cacheFaq(language: string, faq: IKatieFAQ): Promise<void> {
 		try {
 			if (this.faqCacheStorage) {
 				await this.faqCacheStorage.set(language, faq);
@@ -121,6 +121,8 @@ export class Katie {
 		} catch (e) {
 			console.error(e);
 		}
+
+		return Promise.resolve();
 	}
 
 	private async loadFaqFromCache(language: string): Promise<IKatieFAQ> {

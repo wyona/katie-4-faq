@@ -51,7 +51,7 @@ export interface IKatieAnswer {
 }
 
 export interface IKatieExpertAnswer extends IKatieAnswer {
-    "echo-data": string;
+    echodata: string;
 }
 
 export type IKatieFAQ = IKatieTopic[];

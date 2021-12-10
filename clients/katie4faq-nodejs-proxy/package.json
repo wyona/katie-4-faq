@@ -1,6 +1,6 @@
 {
   "name": "@ukatie/proxy",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A data privacy focused proxy for Katie",
   "main": "./build/index.js",
   "scripts": {
