@@ -6,13 +6,21 @@ If you already have setup a domain/FAQ at Katie (https://ukatie.com) and you hav
 
 1. Create a zip file of the Plugin by running ```zip -r katie_4_faq.zip .``` inside this folder
 2. Upload the Plugin to your Wordpress website and activate the Plugin
-3. Configure the Plugin by clicking on the newly generated menu item "Katie Settings" and set the field domainId
+3. Configure the Plugin by clicking on the newly generated menu item "Katie Settings" and set the field "Katie domain Id" (e.g. a805c9bc-5e53-42e3-b987-99bf46f587f9)
 4. Create a page and set the shortcode ```[katie_faq language=en]```
 5. Publish the page
 
 You should then see your FAQ and be able to search your FAQ using natural language :-)
 
-See for example https://rockondigital.ch/frequently-asked-questions/
+See for example https://rockondigital.ch/frequently-asked-questions/ or https://cyclix.ch/ask-cyclix/
+
+## Enabling/Disabling "Please accept Privacy Policy" when forwarding question to expert
+
+1. Click on the menu item "Katie Settings"
+2. Select the checkbox "Flag whether a privacy policy should be displayed and needs to be accepted"
+3. Enter your custom URL and text
+4. Save settings
+5. Reload page where Katie is used, enter a question, submit question to expert and verify that privacy policy text and URL are correct
 
 ## Implementation Details
 
