@@ -1,10 +1,10 @@
-// Katie4FAQ
+// Katie "Ask our experts ..."
 
 /**
  *
  */
-//var apiBaseURL = "https://ukatie.com/api";
-var apiBaseURL = "http://localhost:7070/api";
+var apiBaseURL = "https://ukatie.com/api";
+//var apiBaseURL = "http://localhost:7070/api";
 
 /**
  * @param required If true, then privacy policy needs to be accepted, otherwise checkbox re privacy policy is hidden
