@@ -108,21 +108,7 @@
 }
 
 #katie_overlay_content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-
-#katie_overlay_content h2 {
-  /*background-color: pink;*/
-  font-size: 1.2em;
-}
-
-#katie_overlay_content p {
-  /*background-color: yellow;*/
-  font-size: 0.8em;
+  margin-top: 20px;
 }
 
 #katie_overlay_content input {

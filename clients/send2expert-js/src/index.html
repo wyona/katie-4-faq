@@ -37,16 +37,14 @@
     <div id="katie_ask">
       <input type="text" size="50" data-i18n="input_question.placeholder_label" data-i18n-attr="placeholder" placeholder="Ask a question ..." id="katie_question" name="katie_question" value=""/>
 
-        <div id="katie_overlay_content">
-          <h2 data-i18n="modal.answer_not_helpful">Answer not helpful?</h2>
-          <p data-i18n="modal.please_enter_email">Please enter your email and we will send you a better answer as soon as possible.</p>
-          <div><input id="katie_user_email" type="text" data-i18n="input_email.placeholder_label" data-i18n-attr="placeholder" placeholder="Your email ..."/></div>
+      <div id="katie_overlay_content">
+        <div><input id="katie_user_email" type="text" data-i18n="input_email.placeholder_label" data-i18n-attr="placeholder" placeholder="Your email ..."/></div>
 
-          <div class="katie_hide-privacy-policy" id="katie_privacy-policy"><input type="checkbox" id="privacy_policy_checkbox"/><a href="privacy_policy.html" target="_blank" id="privacy_policy_link_text">I have read and accept the Privacy Statement</a></div>
+        <div class="katie_hide-privacy-policy" id="katie_privacy-policy"><input type="checkbox" id="privacy_policy_checkbox"/><a href="privacy_policy.html" target="_blank" id="privacy_policy_link_text">I have read and accept the Privacy Statement</a></div>
 
-          <div id="send_to_expert_buttons"><button onclick="katie_sendQuestionToExpert(faqLanguage, acceptPrivacyPolicyRequired)" data-i18n="submit">Submit</button></div>
-        </div>
+        <div id="send_to_expert_buttons"><button onclick="katie_sendQuestionToExpert(faqLanguage, acceptPrivacyPolicyRequired)" data-i18n="submit">Submit</button></div>
       </div>
+    </div>
 
     <div id="katie_answer"></div>
 
