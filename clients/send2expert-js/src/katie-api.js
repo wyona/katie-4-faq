@@ -32,54 +32,6 @@ function katie_setPrivacyPolicy(required, language, urlDE, textDE, urlEN, textEN
 }
 
 /**
- * Get answer from Katie and add to DOM
- * @param question Question asked by user
- * @param domainId Domain Id of Katie containing knowledge base
- * @param faqLanguage Language of FAQ, e.g. "en" or "de"
- */
-function katie_askQuestion(question, domainId, faqLanguage) {
-  //alert("DEBUG: Submit question to Katie: " + question);
-  if (question != null && question.length > 0) {
-    fetchAnswer(question, domainId, faqLanguage);
-  } else {
-    if (faqLanguage == "de") {
-      document.getElementById("katie_answer").innerHTML = "Bitte geben Sie eine Frage ein.";
-    } else {
-      document.getElementById("katie_answer").innerHTML = "Please enter a question.";
-    }
-  }
-}
-
-/**
- * Get answer from Katie and add to DOM
- */
-async function fetchAnswer(question, domainId, language) {
-  try {
-    fetch(apiBaseURL + "/v1/ask?domainId=" + domainId + "&question=" + question).then(function(response) {
-      return response.json();
-    }).then(function(json) {
-      let answer = json;
-      console.info(answer);
-      if (answer.answer != null) {
-        if (language == "de") {
-          document.getElementById("katie_answer").innerHTML = answer.answer + "<div id='katie_answer_not_helpful'>Antwort nicht hilfreich? <button class='katie-text-button' onclick='katie_toggleSendQuestionToExpert()'>Frage an einen Experten schicken ...</button></div>";
-        } else {
-          document.getElementById("katie_answer").innerHTML = answer.answer + "<div id='katie_answer_not_helpful'>Answer not helpful? <button class='katie-text-button' onclick='katie_toggleSendQuestionToExpert()'>Send question to expert ...</button></div>";
-      }
-      } else {
-        if (language == "de") {
-          document.getElementById("katie_answer").innerHTML = "Keine Antwort verfügbar. <button class='katie-text-button' onclick='katie_toggleSendQuestionToExpert()'>Frage an einen Experten schicken ...</button>";
-        } else {
-          document.getElementById("katie_answer").innerHTML = "No answer available. <button class='katie-text-button' onclick='katie_toggleSendQuestionToExpert()'>Send question to expert ...</button>";
-        }
-      }
-    });
-  } catch(e) {
-    console.info(e);
-  }
-}
-
-/**
  *
  */
 function katie_toggleSendQuestionToExpert() {
@@ -91,7 +43,7 @@ function katie_toggleSendQuestionToExpert() {
  *
  */
 function katie_sendQuestionToExpert(language, acceptPrivacyPolicyRequired) {
-  document.getElementById("katie_send_to_expert").classList.toggle('katie_open-overlay');
+  //document.getElementById("katie_send_to_expert").classList.toggle('katie_open-overlay');
 
   var question = document.getElementById("katie_question").value;
   var email = document.getElementById("katie_user_email").value;
@@ -136,78 +88,6 @@ function katie_sendQuestionToExpert(language, acceptPrivacyPolicyRequired) {
         }
       } else {
         document.getElementById("katie_answer").innerHTML = "WARNING: Something went wrong while sending question to expert!";
-      }
-    });
-  } catch(e) {
-    console.info(e);
-  }
-}
-
-/**
- * Get FAQ from Katie and add to DOM
- * @param domainId Id of your domain at Katie, e.g. "c9af3861-68nc-4872-z374-4bm12f3d4df7"
- * @param language Language of FAQs, e.g. "en" or "de"
- */
-function katie_getFAQ(domainId, language) {
-   //alert("DEBUG: Get FAQ for domain Id '" + domainId + "' and language '" + language + "' ...");
-   fetchFAQ(domainId, language);
-}
-
-/**
- * Get FAQ from Katie and add to DOM
- */
-async function fetchFAQ(domainId, language) {
-  try {
-    fetch(apiBaseURL + "/v2/faq?context=" + domainId + "&language=" + language + "&uuid-only=false").then(function(response) {
-      return response.json();
-    }).then(function(json) {
-      let topics = json;
-      //console.info(typeof topics); // INFO: json is already an object and does not need to be parsed
-      console.info(topics);
-
-      for (var topic of topics) {
-        //console.info("Topic: " + topic.title);
-
-        var newTopic = document.createElement("div");
-        newTopic.setAttribute("class", "katie_topic");
-        document.getElementById("katie_faq").appendChild(newTopic);
-
-        var newTopicTitle = document.createElement("h2");
-        newTopicTitle.innerHTML = topic.title;
-        newTopic.appendChild(newTopicTitle);
-
-        for (var qna of topic.questions) {
-          //console.info("QnA: " + qna.question);
-
-          var newQnA = document.createElement("div");
-          newQnA.setAttribute("id", "qna_" + qna.uuid);
-          newQnA.setAttribute("class", "katie_qna");
-          newTopic.appendChild(newQnA);
-
-          var newQuestion = document.createElement("div");
-          newQuestion.setAttribute("id", "question_" + qna.uuid);
-          newQuestion.setAttribute("class", "katie_question");
-          newQuestion.addEventListener("click", function(){toggleAnswer();});
-          newQnA.appendChild(newQuestion);
-
-          var newQuestionText = document.createElement("span");
-          newQuestionText.setAttribute("id", "question_text_" + qna.uuid);
-          newQuestionText.setAttribute("class", "katie_question_text");
-          newQuestionText.innerHTML = qna.question;
-          newQuestion.appendChild(newQuestionText);
-
-          var newChevron = document.createElement("span");
-          newChevron.setAttribute("id", "chevron_" + qna.uuid);
-          newChevron.setAttribute("class", "katie_chevron_down");
-          newChevron.innerHTML = "&#160;&#160;&#160;&#160;&#160;&#160;";
-          newQuestion.appendChild(newChevron);
-
-          var newAnswer = document.createElement("div");
-          newAnswer.setAttribute("id", "answer_" + qna.uuid);
-          newAnswer.setAttribute("class", "katie_answer_collapsed");
-          newAnswer.innerHTML = qna.answer;
-          newQnA.appendChild(newAnswer);
-        }
       }
     });
   } catch(e) {
