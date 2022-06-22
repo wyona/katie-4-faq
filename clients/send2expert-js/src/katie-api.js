@@ -96,6 +96,22 @@ function katie_sendQuestionToExpert(language, acceptPrivacyPolicyRequired) {
 }
 
 /**
+ * Get user email
+ */
+function katie_getEmail() {
+  try {
+    fetch(apiBaseURL + "/v1/auth/email").then(function(response) {
+      return response.json();
+    }).then(function(json) {
+      let email = json;
+      console.info(email);
+    });
+  } catch(e) {
+    console.info(e);
+  }
+}
+
+/**
  * Toggle answer from collapsed to expanded and the other way around
  */
 function toggleAnswer() {
