@@ -34,8 +34,25 @@ var englishTranslation = {
   }
 };
 
+var portugueseTranslation = {
+  ask_expert: "Ask our experts ...",
+  ask: "Ask",
+  cancel: "Cancelar",
+  submit: "Enviar",
+  input_question: {
+    placeholder_label: "Faça uma pergunta ..."
+  },
+  input_email: {
+    placeholder_label: "Seu e-mail ..."
+  },
+  modal: {
+    answer_not_helpful: "Answer not helpful?",
+    please_enter_email: "Please enter your email and we will send you a better answer as soon as possible."
+  }
+};
+
 /**
- * @param language Language, e.g. "de" or "en"
+ * @param language Language, e.g. "de" or "en" or "pt"
  */
 function katie_translate(language) {
   //alert("DEBUG: Translate ...");
@@ -106,6 +123,9 @@ function katie_getTextFromTranslationJSON(key, language) {
   if (language == "de") {
     //return deTranslations[key];
     return key.split('.').reduce((obj, i) => (obj ? obj[i] : null), germanTranslation);
+  } else if (language == "pt") {
+    //return ptTranslations[key];
+    return key.split('.').reduce((obj, i) => (obj ? obj[i] : null), portugueseTranslation);
   } else {
     //return enTranslations[key];
     return key.split('.').reduce((obj, i) => (obj ? obj[i] : null), englishTranslation);
