@@ -40,7 +40,26 @@ function katie_toggleSendQuestionToExpert() {
 }
 
 /**
- *
+ * Get user email from local storage and insert into input field
+ */
+function katie_getEmailFromLocalStorage() {
+  const LOCAL_STORAGE_ITEM_ID=domainId;
+  const storageData = JSON.parse(localStorage.getItem(LOCAL_STORAGE_ITEM_ID));
+  if (storageData != null) {
+    document.getElementById("katie_user_email").value = storageData.email;
+  }
+}
+
+/**
+ * Add user email to local storage
+ */
+function addEmailToLocalStorage(email) {
+  const LOCAL_STORAGE_ITEM_ID=domainId;
+  localStorage.setItem(LOCAL_STORAGE_ITEM_ID, JSON.stringify({email}));
+}
+
+/**
+ * Send question to expert
  */
 function katie_sendQuestionToExpert(language, acceptPrivacyPolicyRequired) {
   //document.getElementById("katie_send_to_expert").classList.toggle('katie_open-overlay');
@@ -74,6 +93,9 @@ function katie_sendQuestionToExpert(language, acceptPrivacyPolicyRequired) {
 
   //alert("DEBUG: Send question '" + question + "' and email address of user '" + email + "' to expert ...");
 
+
+
+
   try {
     fetch(apiBaseURL + "/v1/ask?domainId=" + domainId + "&email=" + email + "&questionerLanguage=" + language + "&question=" + question).then(function(response) {
       return response.json();
@@ -81,6 +103,8 @@ function katie_sendQuestionToExpert(language, acceptPrivacyPolicyRequired) {
       let answer = json;
       console.info(answer);
       if (answer.email != null) {
+        addEmailToLocalStorage(answer.email);
+        
         if (language == "de") {
           document.getElementById("katie_answer").innerHTML = "Vielen Dank, dass Sie Ihre Frage eingereicht haben! Wir probieren Ihre Frage <strong>'" + question + "'</strong> so schnell wie möglich zu beantworten und werden Ihnen eine E-Mail schicken an <strong>'" + email + "'</strong>.";
         } else {
