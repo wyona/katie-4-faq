@@ -21,4 +21,3 @@
 * cn_package/katie4faq/katie-style.css
 
 * public/partials/katie_4_faq-public-display.php
-
