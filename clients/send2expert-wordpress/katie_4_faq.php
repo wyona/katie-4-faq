@@ -13,11 +13,11 @@
  * @package           Katie_4_faq
  *
  * @wordpress-plugin
- * Plugin Name:       Katie 4 FAQ
- * Plugin URI:        https://github.com/wyona/katie-4-faq/tree/main/clients/katie4faq-wordpress
- * Description:       Manage FAQ with Katie (https://ukatie.com).
- * Version:           1.2.0
- * Author:            Wyona <contact@wyona.com> and Shivam <ser.shivam1994@gmail.com>
+ * Plugin Name:       Katie S2E
+ * Plugin URI:        https://github.com/wyona/katie-4-faq/tree/main/clients/send2expert-wordpress
+ * Description:       Katie Send to Expert (https://ukatie.com).
+ * Version:           1.0.0
+ * Author:            Wyona <contact@wyona.com>
  * Author URI:        https://wyona.com
  * License:           Apache License 2.0
  * License URI:       https://www.apache.org/licenses/LICENSE-2.0
