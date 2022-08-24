@@ -79,7 +79,7 @@ class Katie_4_faq_Admin {
 	}
 
 	public function Katie_4_faq_plugin_menu(){
-		add_menu_page('Katie Settings', 'Katie Settings', 'manage_options', 'katie-setting',  array($this, 'cn_settings'),'dashicons-text-page',5);
+		add_menu_page('Katie S2E', 'Katie S2E', 'manage_options', 'katie-setting',  array($this, 'cn_settings'),'dashicons-text-page',5);
 		
 	}
 	public function cn_settings(){
@@ -92,7 +92,7 @@ class Katie_4_faq_Admin {
 						jQuery(document).ready(function(){
 							swal({
 								type: 'success',
-								title: 'Katie Settings updated successfully',
+								title: 'Katie S2E Settings updated successfully',
 								text: '',
 								showConfirmButton: false,
 								timer: 1600
