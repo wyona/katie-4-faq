@@ -253,6 +253,6 @@ div#katie_eroor {
 
       katie_translate(faqLanguage);
       katie_setPrivacyPolicy(acceptPrivacyPolicyRequired, faqLanguage, ppDeURL, ppDeText, ppEnURL, ppEnText);
-      katie_getFAQ(domainId, faqLanguage);
+      katie_getEmailFromLocalStorage();
     </script>
 
