@@ -24,10 +24,11 @@ See for example https://rockondigital.ch/frequently-asked-questions/ or https://
 
 ## Implementation Details
 
-The Katie API calls are done by JavaScript (based on the pure JavaScript client https://github.com/wyona/katie-4-faq/tree/main/clients/katie4faq-js/src)
+The Katie API calls are done by JavaScript (based on the pure JavaScript client https://github.com/wyona/katie-4-faq/tree/main/clients/send2expert-js/src)
 
 - cn_package/katie4faq/katie-api.js
+- cn_package/katie4faq/translator.js
 
-The HTML is located at
+The HTML / CSS is located at
 
 - public/partials/katie_4_faq-public-display.php
