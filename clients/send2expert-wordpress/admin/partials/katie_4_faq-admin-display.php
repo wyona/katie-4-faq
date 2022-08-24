@@ -21,7 +21,7 @@ wp_enqueue_media();
       <div class="cn_col-md-12">
         <div class="cn_card">
              <div class="cn_card-header" style="font-size: 15px;">
-              <strong>Katie Settings</strong>
+              <strong>Katie 'Send to Expert' Settings</strong>
             </div>
           <div class="cn_card-body">
               <form class="form-horizontal" action="" method="post">
