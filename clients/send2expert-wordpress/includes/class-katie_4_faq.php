@@ -168,7 +168,7 @@ class Katie_4_faq {
 		$plugin_public = new Katie_4_faq_Public( $this->get_plugin_name(), $this->get_version() );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
-		add_shortcode('katie_faq', array( $plugin_public,'katie_faq'));
+		add_shortcode('katie_s2e', array( $plugin_public,'katie_s2e'));
 
 	}
 

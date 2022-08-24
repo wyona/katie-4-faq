@@ -75,7 +75,10 @@ class Katie_4_faq_Public {
 
 	}
 
-	public function katie_faq($atts) {
+        /**
+         * Shortcode entry point (also see includes/class-katie_4_faq.php)
+         */
+	public function katie_s2e($atts) {
 		ob_start();
 		global $wpdb;
 		$cn_form=get_option('cn_form');
