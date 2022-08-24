@@ -3,7 +3,7 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * @link       https://github.com/wyona/katie-4-faq/tree/main/clients/katie4faq-wordpress
+ * @link       https://github.com/wyona/katie-4-faq/tree/main/clients/send2expert-wordpress
  * @since      1.0.0
  *
  * @package    Katie_4_faq
@@ -132,30 +132,19 @@ class Katie_4_faq_Admin {
   margin-bottom: 20px;
 }
 
-.katie_question {
+#katie_question {
   /*background-color: yellow;*/
   margin-bottom: 10px;
+}
+
+#katie_user_email {
+  margin-top: 10px;
+  /*background-color: pink;*/
 }
 
 .katie_question_text {
   /*background-color: yellow;*/
   margin-right: 20px;
-}
-
-.katie_chevron_down {
-  
-  background-repeat: no-repeat;
-  /*background-color: pink;*/
-      background-position: center;
-      cursor: pointer;
-}
-
-.katie_chevron_up {
-  
-  background-repeat: no-repeat;
-  /*background-color: yellow;*/
-  background-position: center;
-  cursor: pointer;
 }
 
 .katie_answer_collapsed {
@@ -201,55 +190,6 @@ class Katie_4_faq_Admin {
 #katie_send_to_expert {
 }
 
-/* The Modal (background) */
-.katie_overlay {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-#katie_overlay_content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-
-#katie_overlay_content h2 {
-  /*background-color: pink;*/
-  font-size: 1.2em;
-}
-
-#katie_overlay_content p {
-  /*background-color: yellow;*/
-  font-size: 0.8em;
-}
-
-#katie_overlay_content input {
-  /*background-color: green;*/
-  max-width: 35rem;
-  width: 100%;
-}
-
-.katie_close-overlay {
-  display: none;
-  opacity: 0;
-}
-
-.katie_open-overlay {
-  display: flex;
-  opacity: 1;
-}
-
 .katie_question_text {
     cursor: pointer;
 }
@@ -260,11 +200,6 @@ div#katie_eroor {
     text-align: center;
 }
 
-div#katie_overlay_content {
-    width: 400px;
-    text-align: center;
-    border-radius: 15px;
-}
 .cn_cancel{
   float: left;
 }
