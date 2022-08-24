@@ -41,16 +41,12 @@
   background-image: url("chevron-down.svg");
   background-repeat: no-repeat;
   /*background-color: pink;*/
-      background-position: center;
-      cursor: pointer;
 }
 
 .katie_chevron_up {
   background-image: url("chevron-up.svg");
   background-repeat: no-repeat;
   /*background-color: yellow;*/
-  background-position: center;
-  cursor: pointer;
 }
 
 .katie_answer_collapsed {
@@ -112,21 +108,7 @@
 }
 
 #katie_overlay_content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-
-#katie_overlay_content h2 {
-  /*background-color: pink;*/
-  font-size: 1.2em;
-}
-
-#katie_overlay_content p {
-  /*background-color: yellow;*/
-  font-size: 0.8em;
+  margin-top: 20px;
 }
 
 #katie_overlay_content input {
@@ -145,26 +127,9 @@
   opacity: 1;
 }
 
-.katie_question_text {
-    cursor: pointer;
-}
-
-
 div#katie_eroor {
     color: red;
     text-align: center;
-}
-
-div#katie_overlay_content {
-    width: 400px;
-    text-align: center;
-    border-radius: 15px;
-}
-.cn_cancel{
-  float: left;
-}
-.cn_submit{
-  float: right;
 }
 
 #send_to_expert_buttons {

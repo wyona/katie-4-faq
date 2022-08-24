@@ -1,7 +1,7 @@
 // Translator (inspired by https://codeburst.io/translating-your-website-in-pure-javascript-98b9fa4ce427, https://github.com/andreasremdt/simple-translator)
 
 var germanTranslation = {
-  my_faq: "Meine häufig gestellten Fragen",
+  ask_expert: "Frage unsere Experten ...",
   ask: "Fragen",
   cancel: "Abbrechen",
   submit: "Absenden",
@@ -18,7 +18,7 @@ var germanTranslation = {
 };
 
 var englishTranslation = {
-  my_faq: "My Frequently Asked Questions",
+  ask_expert: "Ask our experts ...",
   ask: "Ask",
   cancel: "Cancel",
   submit: "Submit",
@@ -34,8 +34,25 @@ var englishTranslation = {
   }
 };
 
+var portugueseTranslation = {
+  ask_expert: "Ask our experts ...",
+  ask: "Ask",
+  cancel: "Cancelar",
+  submit: "Enviar",
+  input_question: {
+    placeholder_label: "Faça uma pergunta ..."
+  },
+  input_email: {
+    placeholder_label: "Seu e-mail ..."
+  },
+  modal: {
+    answer_not_helpful: "Answer not helpful?",
+    please_enter_email: "Please enter your email and we will send you a better answer as soon as possible."
+  }
+};
+
 /**
- * @param language Language, e.g. "de" or "en"
+ * @param language Language, e.g. "de" or "en" or "pt"
  */
 function katie_translate(language) {
   //alert("DEBUG: Translate ...");
@@ -52,7 +69,7 @@ function katie_translate(language) {
 }
 
 /**
- * Replace text, e.g. <h1 data-i18n="my_faq">My Frequently Asked Questions</h1> or <input data-i18n="input.placeholder_label input.title_label" data-i18n-attr="placeholder title" placeholder="Ask a question ..." title="Question"/>
+ * Replace text, e.g. <h1 data-i18n="ask_expert">Ask our experts ...</h1> or <input data-i18n="input.placeholder_label input.title_label" data-i18n-attr="placeholder title" placeholder="Ask a question ..." title="Question"/>
  * @param language Language, e.g. "de" or "en"
  */
 function katie_replace(element, language) {
@@ -99,13 +116,16 @@ function katie_getTextFromTranslationJSON(key, language) {
 
   // TODO: In the case of the Lucene example only the "flat" JSON implementation works
 
-  //deTranslations = {"my_faq":"Meine häufig gestellten Fragen","ask":"Fragen","cancel":"Abbrechen","submit":"Absenden","input_question.placeholder_label":"Eine Frage stellen ...","input_email.placeholder_label":"Ihre E-Mail ...","modal.answer_not_helpful":"Antwort nicht hilfreich?","modal.please_enter_email":"Bitte geben Sie Ihre E-Mail-Adresse ein, und wir werden Ihnen so schnell wie möglich eine bessere Antwort zukommen lassen."};
+  //deTranslations = {"ask_expert":"Frage unsere Experten ...","ask":"Fragen","cancel":"Abbrechen","submit":"Absenden","input_question.placeholder_label":"Eine Frage stellen ...","input_email.placeholder_label":"Ihre E-Mail ...","modal.answer_not_helpful":"Antwort nicht hilfreich?","modal.please_enter_email":"Bitte geben Sie Ihre E-Mail-Adresse ein, und wir werden Ihnen so schnell wie möglich eine bessere Antwort zukommen lassen."};
 
-  //enTranslations = {"my_faq":"My Frequently Asked Questions","ask":"Ask","cancel":"Cancel","submit":"Submit","input_question.placeholder_label":"Ask a question ...","input_email.placeholder_label":"Your email ...","modal.answer_not_helpful":"Answer not helpful?","modal.please_enter_email":"Please enter your email and we will send you a better answer as soon as possible."};
+  //enTranslations = {"ask_expert":"Ask our experts ...","ask":"Ask","cancel":"Cancel","submit":"Submit","input_question.placeholder_label":"Ask a question ...","input_email.placeholder_label":"Your email ...","modal.answer_not_helpful":"Answer not helpful?","modal.please_enter_email":"Please enter your email and we will send you a better answer as soon as possible."};
 
   if (language == "de") {
     //return deTranslations[key];
     return key.split('.').reduce((obj, i) => (obj ? obj[i] : null), germanTranslation);
+  } else if (language == "pt") {
+    //return ptTranslations[key];
+    return key.split('.').reduce((obj, i) => (obj ? obj[i] : null), portugueseTranslation);
   } else {
     //return enTranslations[key];
     return key.split('.').reduce((obj, i) => (obj ? obj[i] : null), englishTranslation);

@@ -235,10 +235,17 @@ div#katie_overlay_content {
     <div id="katie_eroor"></div>
     
     <div id="katie_ask">
-      <div style="text-align: center;">
-        <input style="width: 90%; float: left;" type="text" size="50" data-i18n="input_question.placeholder_label" data-i18n-attr="placeholder" placeholder="Ask a question ..." id="katie_question" name="katie_question" class="cn-form-control" value=""/>
-        <button onclick="katie_askQuestion(katie_question.value, domainId, faqLanguage);" id="katie_ask-button" class="btn button" data-i18n="ask">Ask</button>
+      <input type="text" size="50" data-i18n="input_question.placeholder_label" data-i18n-attr="placeholder" placeholder="Ask a question ..." id="katie_question" name="katie_question" value=""/>
+
+      <div id="katie_overlay_content">
+        <div><input id="katie_user_email" type="text" data-i18n="input_email.placeholder_label" data-i18n-attr="placeholder" placeholder="Your email ..."/></div>
+
+        <div class="katie_hide-privacy-policy" id="katie_privacy-policy"><input type="checkbox" id="privacy_policy_checkbox"/><a href="privacy_policy.html" target="_blank" id="privacy_policy_link_text">I have read and accept the Privacy Statement</a></div>
+
+        <div id="send_to_expert_buttons"><button onclick="katie_sendQuestionToExpert(faqLanguage, acceptPrivacyPolicyRequired)" data-i18n="submit">Submit</button></div>
       </div>
+
+
        <script>
     var input = document.getElementById("katie_question");
     input.addEventListener("keyup", function(event) {
@@ -252,21 +259,7 @@ div#katie_overlay_content {
 
       <div id="katie_answer"></div>
 
-      <div id="katie_send_to_expert" class="katie_close-overlay katie_overlay">
-        <div id="katie_overlay_content">
-          <h2 data-i18n="modal.answer_not_helpful">Answer not helpful?</h2>
-          <p data-i18n="modal.please_enter_email">Please enter your email and we will send you a better answer as soon as possible.</p>
-          <div class="cn-form-group"><input style="max-width: unset;" class="cn-form-control" id="katie_user_email" type="text" data-i18n="input_email.placeholder_label" data-i18n-attr="placeholder" placeholder="Your email ..."/></div>
-          <div class="katie_hide-privacy-policy" id="katie_privacy-policy"><input type="checkbox" id="privacy_policy_checkbox"/><a href="privacy_policy.html" target="_blank" id="privacy_policy_link_text">I have read and accept the Privacy Statement</a></div>
-          <div class="cn-form-group"><button onclick="katie_send_to_expert.classList.toggle('katie_open-overlay')" class="button btn cn_cancel" data-i18n="cancel">Cancel</button>&#160;<button onclick="katie_sendQuestionToExpert(faqLanguage, acceptPrivacyPolicyRequired)" class="button btn cn_submit" data-i18n="submit">Submit</button></div>
-        </div>
-      </div>
     </div>
-
-    <hr/>
-
-   
-    <div id="katie_faq"></div>
 
     <script type="text/javascript">
       //var domainId = "9f206aec-5223-4e03-a2fc-c16e4b885ef8";
