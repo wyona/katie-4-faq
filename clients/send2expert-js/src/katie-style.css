@@ -37,18 +37,6 @@
   margin-right: 20px;
 }
 
-.katie_chevron_down {
-  background-image: url("chevron-down.svg");
-  background-repeat: no-repeat;
-  /*background-color: pink;*/
-}
-
-.katie_chevron_up {
-  background-image: url("chevron-up.svg");
-  background-repeat: no-repeat;
-  /*background-color: yellow;*/
-}
-
 .katie_answer_collapsed {
   display: none;
 }
