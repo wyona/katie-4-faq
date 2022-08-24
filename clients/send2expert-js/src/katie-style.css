@@ -27,14 +27,14 @@
   margin-bottom: 20px;
 }
 
-.katie_question {
-  /*background-color: yellow;*/
+#katie_question {
   margin-bottom: 10px;
+  /*background-color: yellow;*/
 }
 
-.katie_question_text {
-  /*background-color: yellow;*/
-  margin-right: 20px;
+#katie_user_email {
+  margin-top: 10px;
+  /*background-color: pink;*/
 }
 
 .katie_answer_collapsed {

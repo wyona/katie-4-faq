@@ -12,9 +12,9 @@
       //var faqLanguage = "en";
       //var domainId = "2460637f-3d61-4e56-bb88-6c9848a50ad2";
       var domainId = "ROOT";
-      var faqLanguage = "en";
+      //var faqLanguage = "en";
       //var faqLanguage = "pt";
-      //var faqLanguage = "de";
+      var faqLanguage = "de";
 
       var acceptPrivacyPolicyRequired = true;
       //var acceptPrivacyPolicyRequired = false;
@@ -38,15 +38,13 @@
 
     <!-- INFO: Call function katie_askQuestion() -->
     <div id="katie_ask">
-      <input type="text" size="50" data-i18n="input_question.placeholder_label" data-i18n-attr="placeholder" placeholder="Ask a question ..." id="katie_question" name="katie_question" value=""/>
+      <div><input id="katie_question" type="text" size="50" data-i18n="input_question.placeholder_label" data-i18n-attr="placeholder" placeholder="Ask a question ..." name="katie_question" value=""/></div>
 
-      <div id="katie_overlay_content">
-        <div><input id="katie_user_email" type="text" data-i18n="input_email.placeholder_label" data-i18n-attr="placeholder" placeholder="Your email ..."/></div>
+      <div><input id="katie_user_email" type="text" data-i18n="input_email.placeholder_label" data-i18n-attr="placeholder" placeholder="Your email ..."/></div>
 
-        <div class="katie_hide-privacy-policy" id="katie_privacy-policy"><input type="checkbox" id="privacy_policy_checkbox"/><a href="privacy_policy.html" target="_blank" id="privacy_policy_link_text">I have read and accept the Privacy Statement</a></div>
+      <div class="katie_hide-privacy-policy" id="katie_privacy-policy"><input type="checkbox" id="privacy_policy_checkbox"/><a href="privacy_policy.html" target="_blank" id="privacy_policy_link_text">I have read and accept the Privacy Statement</a></div>
 
-        <div id="send_to_expert_buttons"><button onclick="katie_sendQuestionToExpert(faqLanguage, acceptPrivacyPolicyRequired)" data-i18n="submit">Submit</button></div>
-      </div>
+      <div id="send_to_expert_buttons"><button onclick="katie_sendQuestionToExpert(faqLanguage, acceptPrivacyPolicyRequired)" data-i18n="submit">Submit</button></div>
     </div>
 
     <div id="katie_answer"></div>
