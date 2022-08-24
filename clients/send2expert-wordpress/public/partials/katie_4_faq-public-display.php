@@ -47,9 +47,14 @@
   margin-bottom: 20px;
 }
 
-.katie_question {
+#katie_question {
   /*background-color: yellow;*/
   margin-bottom: 10px;
+}
+
+#katie_user_email {
+  margin-top: 10px;
+  /*background-color: pink;*/
 }
 
 .katie_question_text {
@@ -131,30 +136,6 @@
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-#katie_overlay_content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-
-#katie_overlay_content h2 {
-  /*background-color: pink;*/
-  font-size: 1.2em;
-}
-
-#katie_overlay_content p {
-  /*background-color: yellow;*/
-  font-size: 0.8em;
-}
-
-#katie_overlay_content input {
-  /*background-color: green;*/
-  max-width: 35rem;
-  width: 100%;
-}
-
 .katie_close-overlay {
   display: none;
   opacity: 0;
@@ -175,11 +156,6 @@ div#katie_eroor {
     text-align: center;
 }
 
-div#katie_overlay_content {
-    width: 400px;
-    text-align: center;
-    border-radius: 15px;
-}
 .cn_cancel{
   float: left;
 }
@@ -235,27 +211,13 @@ div#katie_overlay_content {
     <div id="katie_eroor"></div>
     
     <div id="katie_ask">
-      <input type="text" size="50" data-i18n="input_question.placeholder_label" data-i18n-attr="placeholder" placeholder="Ask a question ..." id="katie_question" name="katie_question" value=""/>
+      <div><input id="katie_question" type="text" size="50" data-i18n="input_question.placeholder_label" data-i18n-attr="placeholder" placeholder="Ask a question ..." name="katie_question" value=""/></div>
 
-      <div id="katie_overlay_content">
-        <div><input id="katie_user_email" type="text" data-i18n="input_email.placeholder_label" data-i18n-attr="placeholder" placeholder="Your email ..."/></div>
+      <div><input id="katie_user_email" type="text" data-i18n="input_email.placeholder_label" data-i18n-attr="placeholder" placeholder="Your email ..."/></div>
 
-        <div class="katie_hide-privacy-policy" id="katie_privacy-policy"><input type="checkbox" id="privacy_policy_checkbox"/><a href="privacy_policy.html" target="_blank" id="privacy_policy_link_text">I have read and accept the Privacy Statement</a></div>
+      <div class="katie_hide-privacy-policy" id="katie_privacy-policy"><input type="checkbox" id="privacy_policy_checkbox"/><a href="privacy_policy.html" target="_blank" id="privacy_policy_link_text">I have read and accept the Privacy Statement</a></div>
 
-        <div id="send_to_expert_buttons"><button onclick="katie_sendQuestionToExpert(faqLanguage, acceptPrivacyPolicyRequired)" data-i18n="submit">Submit</button></div>
-      </div>
-
-
-       <script>
-    var input = document.getElementById("katie_question");
-    input.addEventListener("keyup", function(event) {
-      if (event.keyCode === 13) {
-       event.preventDefault();
-       document.getElementById("katie_ask-button").click();
-      }
-    });
-    </script>
-
+      <div id="send_to_expert_buttons"><button onclick="katie_sendQuestionToExpert(faqLanguage, acceptPrivacyPolicyRequired)" data-i18n="submit">Submit</button></div>
 
       <div id="katie_answer"></div>
 
