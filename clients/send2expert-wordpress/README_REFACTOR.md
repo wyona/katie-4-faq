@@ -13,3 +13,12 @@
 * README.md
 * includes/class-katie_4_faq.php
 * public/class-katie_4_faq-public.php
+
+## Javascript, CSS, HTML
+
+* cn_package/katie4faq/katie-api.js
+* cn_package/katie4faq/translator.js
+* cn_package/katie4faq/katie-style.css
+
+* public/partials/katie_4_faq-public-display.php
+
