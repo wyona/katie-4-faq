@@ -136,28 +136,6 @@ function katie_getEmail() {
 }
 
 /**
- * Toggle answer from collapsed to expanded and the other way around
- */
-function toggleAnswer() {
-  var uuid = getUuid(event.srcElement.id);
-  //alert("DEBUG: Toggle answer with QnA id: " + uuid);
-
-  if (this.document.getElementById("answer_" + uuid).classList.contains("katie_answer_collapsed")) {
-      this.document.getElementById("chevron_" + uuid).classList.remove('katie_chevron_down');
-      this.document.getElementById("chevron_" + uuid).classList.add('katie_chevron_up');
-
-      this.document.getElementById("answer_" + uuid).classList.remove('katie_answer_collapsed');
-      this.document.getElementById("answer_" + uuid).classList.add('katie_answer_expanded');
-  } else {
-      this.document.getElementById("chevron_" + uuid).classList.remove('katie_chevron_up');
-      this.document.getElementById("chevron_" + uuid).classList.add('katie_chevron_down');
-
-      this.document.getElementById("answer_" + uuid).classList.remove('katie_answer_expanded');
-      this.document.getElementById("answer_" + uuid).classList.add('katie_answer_collapsed');
-  }
-}
-
-/**
  * @param srcElementId Source element Id, e.g. "chevron_597178eb-112a-40c0-893d-b643a4f08447" or "question_text_597178eb-112a-40c0-893d-b643a4f08447"
  * @return actual id, e.g. "597178eb-112a-40c0-893d-b643a4f08447"
  */
