@@ -4,7 +4,7 @@
 
 If you already have setup a domain/FAQ at Katie (https://ukatie.com) and you have a Wordpress website, then do the following steps
 
-1. Create a zip file of the Plugin by running ```zip -r send_2_expert.zip .``` inside this folder
+1. Create a zip file of the Plugin by running ```zip -r send_2_expert.zip .``` inside this folder (check Version inside katie_4_faq.php)
 2. Upload the Plugin to your Wordpress website and activate the Plugin
 3. Configure the Plugin by clicking on the newly generated menu item "Katie S2E" and set the field "Katie domain Id" (e.g. a805c9bc-5e53-42e3-b987-99bf46f587f9)
 4. Create a page and set the shortcode ```[katie_s2e language=en]```
