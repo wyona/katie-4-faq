@@ -36,6 +36,14 @@ wp_enqueue_media();
                 <div class="cn-form-group">
                   <div class="row">
                     <div class="cn_col-md-6">
+                      <label class="control-label" for="">Flag whether user email should be remembered:</label>
+                      <input type="checkbox" name="cn_form[rememberEmailFlag]" class="cn-form-control" <?php if($cn_form['rememberEmailFlag'] == "on") echo "checked" ?>>
+                    </div>
+                  </div>
+                </div>
+                <div class="cn-form-group">
+                  <div class="row">
+                    <div class="cn_col-md-6">
                       <label class="control-label" for="">Flag whether a privacy policy should be displayed and needs to be accepted:</label>
                       <input type="checkbox" name="cn_form[acceptPrivacyPolicyRequiredFlag]" class="cn-form-control" <?php if($cn_form['acceptPrivacyPolicyRequiredFlag'] == "on") echo "checked" ?>>
                     </div>

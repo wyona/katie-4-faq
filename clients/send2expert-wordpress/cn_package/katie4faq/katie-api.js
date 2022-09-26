@@ -45,7 +45,7 @@ function katie_toggleSendQuestionToExpert() {
 function katie_getEmailFromLocalStorage() {
   const LOCAL_STORAGE_ITEM_ID=domainId;
   const storageData = JSON.parse(localStorage.getItem(LOCAL_STORAGE_ITEM_ID));
-  if (storageData != null) {
+  if (storageData != null && rememberEmail) {
     document.getElementById("katie_user_email").value = storageData.email;
   }
 }

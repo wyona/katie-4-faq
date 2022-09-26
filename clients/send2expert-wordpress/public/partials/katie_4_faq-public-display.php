@@ -230,6 +230,15 @@ div#katie_eroor {
       //alert("DEBUG: domainId: " + domainId);
       var faqLanguage = "<?php echo $language; ?>";
 
+      var rememberEmail = false;
+      var rememberEmailFlag = "<?php echo $cn_form['rememberEmailFlag']; ?>";
+      //alert("DEBUG: rememberEmailFlag: " + rememberEmailFlag);
+      if (rememberEmailFlag == "on") {
+        rememberEmail = true;
+      } else {
+        //alert("DEBUG: rememberEmailFlag: off");
+      }
+
       var acceptPrivacyPolicyRequired = false;
       var acceptPrivacyPolicyRequiredFlag = "<?php echo $cn_form['acceptPrivacyPolicyRequiredFlag']; ?>";
       //alert("DEBUG: acceptPrivacyPolicyRequiredFlag: " + acceptPrivacyPolicyRequiredFlag);
