@@ -2,7 +2,7 @@
 
 ## Installation
 
-If you already have setup a domain/FAQ at Katie (https://ukatie.com) and you have a Wordpress website, then do the following steps
+If you already have setup a domain/FAQ at Katie (https://katie.qa) and you have a Wordpress website, then do the following steps
 
 1. Create a zip file of the Plugin by running ```zip -r katie_4_faq.zip .``` inside this folder
 2. Upload the Plugin to your Wordpress website and activate the Plugin
