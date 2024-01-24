@@ -4,4 +4,4 @@ If you already have setup a domain/FAQ at Katie (https://katie.qa), then configu
 
 The integration into your own website is straightforward by copying the various code snippets of src/index.html
 
-See for example https://lucene-faq.ukatie.com/
+See for example https://lucene-faq.katie.qa/
