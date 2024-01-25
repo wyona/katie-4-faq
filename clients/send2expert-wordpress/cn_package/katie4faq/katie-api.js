@@ -3,7 +3,7 @@
 /**
  *
  */
-var apiBaseURL = "https://ukatie.com/api";
+var apiBaseURL = "https://app.katie.qa/api";
 //var apiBaseURL = "http://localhost:7070/api";
 
 /**

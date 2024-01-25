@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       Katie S2E
  * Plugin URI:        https://github.com/wyona/katie-4-faq/tree/main/clients/send2expert-wordpress
- * Description:       Katie Send to Expert (https://ukatie.com).
+ * Description:       Katie Send to Expert (https://katie.qa).
  * Version:           1.0.5
  * Author:            Wyona <contact@wyona.com>
  * Author URI:        https://wyona.com
