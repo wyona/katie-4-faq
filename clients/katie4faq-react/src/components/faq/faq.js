@@ -6,7 +6,7 @@ import React from "react";
  */
 export default class Faq extends React.Component {
 
-apiBaseURL = "https://ukatie.com/api";
+apiBaseURL = "https://app.katie.qa/api";
 
 //domainId = "c9af3861-68cc-4872-b966-4bd19f3d4df7";
 //language = "de";
